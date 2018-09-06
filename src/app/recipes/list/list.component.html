@@ -1,3 +1,22 @@
-<p>
-  recipe list works!
-</p>
+<div class="wrapper">
+<ul>
+  <li class="itemRecipe" *ngFor="let item of ItemRecipe;">
+    <div class="title">{{item.title}}</div>
+    <div class="wrapFlex">
+      <div class="photo"><img src={{item.photo}}></div>
+      <div class="wrap">
+        <div class="description">{{item.description}}</div>
+         <ul>
+           <hr>
+          <li class="requiredIngridients" *ngFor="let subItem of item.requiredIngridients;">
+            <div class="ingridient">{{subItem.ingridient}}</div>
+            <div class="amountOfIngridient">{{subItem.amountOfIngridient}}</div>
+          </li>
+           <hr>
+        </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+<hr>
