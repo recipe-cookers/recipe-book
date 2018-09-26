@@ -8,6 +8,8 @@ import { StartModule } from './start/start.module';
 import { IngridientsModule } from './ingridients/ingridients.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { DetailsModule } from './details/details.module';
+import {AppRoutingModule} from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { DetailsModule } from './details/details.module';
     StartModule,
     IngridientsModule,
     RecipesModule,
-    DetailsModule
+    DetailsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
