@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { StartComponent } from './start/start.component';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   declarations: [StartComponent],
   exports: [StartComponent]
