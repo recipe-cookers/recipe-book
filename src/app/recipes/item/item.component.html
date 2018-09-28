@@ -1,15 +1,20 @@
-<!--<div class="title">{{recipe.name}}</div>-->
-<!--<div class="wrapFlex">-->
-  <!--<div class="photo"><img src={{recipe.image}}></div>-->
-  <!--<div class="wrap">-->
-    <!--<div class="description">{{recipe.description}}</div>-->
-    <!--<ul>-->
-    <!--<hr>-->
-    <!--<li class="requiredIngridients" *ngFor="let subItem of recipe.ingridients;">-->
-    <!--<div class="ingridient">{{subItem.name}}</div>-->
-    <!--<div class="amountOfIngridient">{{subItem.amount +' '+ subItem.measure}}</div>-->
-    <!--</li>-->
-    <!--<hr>-->
-    <!--</ul>-->
-  <!--</div>-->
-<!--</div>-->
+<div *ngIf="recipe$ | async as recipe">
+  <div class="title">{{recipe.name}}</div>
+  <div class="wrapFlex">
+    <div class="photo"><img src={{recipe.image}}></div>
+    <div class="wrap">
+      <div class="description">{{recipe.description}}</div>
+      <ul>
+      <hr>
+      <li class="requiredIngridients" *ngFor="let subItem of recipe.ingridients;">
+      <div class="ingridient">{{subItem.name}}</div>
+      <div class="amountOfIngridient">{{subItem.amount +' '+ subItem.measure}}</div>
+      </li>
+      <hr>
+      </ul>
+      <p>
+        <button (click)="gotoRecipeList(recipe)">Back</button>
+      </p>
+    </div>
+  </div>
+</div>
