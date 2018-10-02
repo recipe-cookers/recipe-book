@@ -1,19 +1,12 @@
 <div class="wrapper">
 <ul>
-  <li class="itemRecipe" *ngFor="let item of ItemRecipe;">
-    <div class="title">{{item.title}}</div>
+  <li class="itemRecipe" *ngFor="let item of recipies;">
+    <div class="title" >{{item.name}}</div>
     <div class="wrapFlex">
-      <div class="photo"><img src={{item.photo}}></div>
+      <div class="photo"><img src={{item.image}}></div>
       <div class="wrap">
-        <div class="description">{{item.description}}</div>
-         <ul>
-           <hr>
-          <li class="requiredIngridients" *ngFor="let subItem of item.requiredIngridients;">
-            <div class="ingridient">{{subItem.ingridient}}</div>
-            <div class="amountOfIngridient">{{subItem.amountOfIngridient}}</div>
-          </li>
-           <hr>
-        </ul>
+        <div class="description">{{item.description.slice(0,200)+'...'}}</div>
+        <p><a [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)">More</a></p>
       </div>
     </div>
   </li>

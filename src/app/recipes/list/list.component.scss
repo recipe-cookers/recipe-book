@@ -1,6 +1,5 @@
 .wrapFlex{
   display: flex;
-  wisth:75%;
 }
 .title{
   margin-bottom: 20px;
@@ -17,4 +16,12 @@
   font-style: italic;
   font-size: 24px;
   color: darkgrey;
+}
+img{
+  width: 300px;
+  height: 200px;
+}
+.description{
+  text-align: justify;
+  padding: 5px;
 }
