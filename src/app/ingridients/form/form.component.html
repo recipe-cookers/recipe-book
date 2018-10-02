@@ -1,3 +1,29 @@
-<p>
-  ingridients form works!
-</p>
+<div class="form">
+  <h3>Добавить ингредиенты</h3>
+  <form class="form-add" (ngSubmit)='onSubmit(); form.reset()' #form='ngForm'>
+    <div class='input'><input class="datalist" type="text" list="product" placeholder="Добавить ингредиент" name = 'ingridient' [(ngModel)]="title" required></div>
+    <div class='input'><input type="text" placeholder="Колличество" name = 'amount' [(ngModel)]="titleAmount" required></div>
+    <datalist id="product">
+      <option>сахар</option>
+      <option>соль</option>
+      <option>яблоко</option>
+      <option>свинина</option>
+      <option>мука</option>
+      <option>перец</option>
+  </datalist>
+    <form >
+      <div clacc='input'>
+        <select  name = 'unit' [(ngModel)]="titleUnit" required>
+          <option>гр.</option>
+          <option>мл.</option>
+          <option>шт.</option>
+          <option>ст.л.</option>
+          <option>ч.л.</option>
+        </select>
+      </div>
+    </form>
+    <button class="add" type="submit" [disabled]='form.form.invalid'>Добавить</button>
+  </form>
+  <a class="next" routerLink="/recipes">Подобрать рецепт</a>
+  <a class="back" routerLink="">Назад</a>
+</div>
