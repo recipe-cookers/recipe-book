@@ -2,5 +2,16 @@
 .main {
     width: 100%;
     text-align: center;
-   
+}
+button {
+    border: 0;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+button:focus {
+    outline: none;
+}
+button:hover {
+    text-decoration: underline;
 }

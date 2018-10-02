@@ -1,5 +1,23 @@
+<<<<<<< HEAD
 <p>
   recipe list works!
 </p>
 <a class="green" routerLink="/details">ПОДРОБНО</a>
 <a routerLink="/ingridients">НАЗАД</a>
+=======
+<div class="wrapper">
+<ul>
+  <li class="itemRecipe" *ngFor="let item of recipies;">
+    <div class="title" >{{item.name}}</div>
+    <div class="wrapFlex">
+      <div class="photo"><img src={{item.image}}></div>
+      <div class="wrap">
+        <div class="description">{{item.description.slice(0,200)+'...'}}</div>
+        <p><a [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)">More</a></p>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+<hr>
+>>>>>>> 5ea0db85783e1e8b67ed0a5c0412501b492cf060

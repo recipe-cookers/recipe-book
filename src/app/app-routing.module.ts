@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import {Routes, RouterModule} from '@angular/router';
+import {StartComponent} from './start/start/start.component';
+import {IngridientsComponent} from './ingridients/ingridients.component';
+import {DetailsComponent} from './details/details.component';
+import {RecipesComponent} from './recipes/recipes.component';
+import {RegistrationComponent} from './core/registration/registration.component';
+import {LoginComponent} from './core/login/login.component';
+import {ProfileComponent} from './core/profile/profile.component';
 
-const routesMain: Routes = [
-    { path: '', redirectTo: '/start', pathMatch: 'full' },
-    {path: 'start', loadChildren:'./start/start.module#StartModule' },
-    {path: 'ingridients', loadChildren:'./ingridients/ingridients.module#IngridientsModule' },
-    {path: 'recipes', loadChildren:'./recipes/recipes.module#RecipesModule' },
-    {path: 'details', loadChildren:'./details/details.module#DetailsModule' },
-    { path: '**', component: PageNotFoundComponent}
+export const routes: Routes = [
+  { path: 'start', component: StartComponent},
+  { path: 'registration', component: RegistrationComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'profile', component: ProfileComponent},
+  { path: 'ingridients', component: IngridientsComponent},
+  { path: 'recipies', component: RecipesComponent},
+  { path: 'details', component: DetailsComponent},
+  { path: '**',   redirectTo: '/start', pathMatch: 'full' },
 ];
 
+
+
 @NgModule({
-    imports: [RouterModule.forRoot(routesMain)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule {}
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
