@@ -1,0 +1,50 @@
+
+.form{
+    height: 288px;
+    padding: 10px;
+}
+h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.form-add{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+input{
+   height: 40px;
+   margin-bottom: 10px;
+   width: 300px;
+   font-size: 20px;
+   padding-left: 10px;
+}
+.datalist::-webkit-calendar-picker-indicator {
+    display: none;
+}
+select{
+   height: 40px;
+   margin-bottom: 10px;
+   width: 300px;
+   font-size: 20px;
+   padding-left: 10px;
+}
+.add{
+    cursor: pointer;
+}
+.next{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    text-decoration: none;
+    color: green;
+    font-size: 30px;
+}
+.back{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    text-decoration: none;
+    color: rgb(124, 4, 4);
+    font-size: 30px;
+}
