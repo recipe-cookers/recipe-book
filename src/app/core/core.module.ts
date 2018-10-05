@@ -5,16 +5,18 @@ import {RouterModule} from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import {FormsModule} from '@angular/forms';
+import {AuthService} from './services/auth.service';
 
 
-const Exports = [PageNotFoundComponent];
-const Components = [PageNotFoundComponent];
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
-  exports: [RegistrationComponent, LoginComponent, ProfileComponent],
-  declarations: [RegistrationComponent, LoginComponent, ProfileComponent]
+  exports: [RegistrationComponent, LoginComponent, ProfileComponent, PageNotFoundComponent],
+  declarations: [RegistrationComponent, LoginComponent, ProfileComponent, PageNotFoundComponent],
+  providers: [AuthService]
 })
 export class CoreModule { }
