@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {UserRegister} from '../../shared/models/login.model';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -6,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+  model = {} as UserRegister;
+  constructor(private auth: AuthService, private router: Router, private http: HttpClient) {};
+  submitted = false;
 
-  constructor() { }
-
+  onSubmit(e, registerForm) {
+    this.submitted = true;
+    this.auth.registerUser({registerForm}).subscribe(() => {
+      this.router.navigateByUrl('/login');
+    });
+  }
   ngOnInit() {
   }
 

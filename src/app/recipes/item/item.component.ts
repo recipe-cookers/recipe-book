@@ -27,6 +27,6 @@ export class RecipeItemComponent implements OnInit {
     const recipeId = recipe ? recipe.id : null;
     // Pass along the recipe id if available
     // so that the RecipeList component can select that recipe.
-    this.router.navigate(['/recipies', { id: recipeId}]);
+    this.router.navigate(['/recipies']);
   }
 }

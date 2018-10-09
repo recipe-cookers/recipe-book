@@ -3,5 +3,12 @@ export class UserLogin {
     public email: string,
     public password: string,
   ) {  }
-
+}
+export class UserRegister {
+  constructor(
+    public name: string,
+    public email: string,
+    public password: string,
+    public password_confirmation: string
+  ) {}
 }
