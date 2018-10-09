@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/');
     });
   }
-
   clearForm(loginForm) {
     console.log(loginForm);
     this.model = {} as UserLogin;

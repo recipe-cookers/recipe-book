@@ -61,6 +61,15 @@ input{
   -o-transition: all 2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+button{
+  border: none;
+  background: transparent;
+  color: whitesmoke;
+  outline: none;
+}
+button:hover{
+  color: #667675;
+}
 
 input:focus{
   outline: none;
