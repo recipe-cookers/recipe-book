@@ -16,8 +16,8 @@ export class IngridientsService{
         return this.ingridients;
     }
 
-    createIngridient(title:string, titleAmount:string, titleUnit:string){
-        const ingridient = new Ingridient(title, titleAmount, titleUnit);
+    createIngridient(title:string, titleAmount:string, titleMeasure:string){
+        const ingridient = new Ingridient(title, titleAmount, titleMeasure);
         this.ingridients.push(ingridient);
 
     }

@@ -4,7 +4,7 @@ import { RecipeListComponent } from './list/list.component';
 
 
 const routes: Routes = [
-  { path: 'recipes', component: RecipeListComponent},
+  { path: 'recipies', component: RecipeListComponent},
  
   
   

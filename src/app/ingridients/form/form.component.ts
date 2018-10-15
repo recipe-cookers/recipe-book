@@ -12,13 +12,13 @@ export class IngridientsFormComponent  {
 
   title:string='';
   titleAmount:string='';
-  titleUnit:string='гр.';
+  titleMeasure:string='гр.';
   
   constructor(private ingridientsService:IngridientsService){  
  }
  
   onSubmit(){
-    this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleUnit);
+    this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleMeasure);
   }
   
 }
