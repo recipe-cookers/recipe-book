@@ -11,11 +11,15 @@ import { DetailsModule } from './details/details.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { IngridientsService } from './shared/services/ingridients.service';
+import { NavComponent } from './nav/nav.component';
+import { ButtonComponent } from './button/button.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
