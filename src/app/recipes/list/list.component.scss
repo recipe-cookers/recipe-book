@@ -9,19 +9,24 @@
 *{
   list-style: none;
 }
-.requiredIngridients{
-  width:80%;
-  justify-content: space-around;
-  display: flex;
-  font-style: italic;
-  font-size: 24px;
-  color: darkgrey;
-}
+
 img{
-  width: 300px;
-  height: 200px;
+  width: 265px;
+  height: 265px;
 }
 .description{
   text-align: justify;
   padding: 5px;
+}
+
+.itemRecipe {
+  &:focus{
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+
+  }
 }
