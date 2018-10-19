@@ -1,21 +1,16 @@
-ul{
-    text-align: center;
-}
-li{
-    display: inline-block;
-    width: 100%;
-    max-width: 500px;
-    font-size: 30px;
-    font-weight: bold;
-    margin: 10px;
-    border-bottom: 2px solid black;
-}
 span{
-    display: block;
-    float: left;
-    box-shadow: 5px, 3px, 4px, 2px, black;
+   font-size: 20px;
+
+}
+.item ul{
+    list-style: none;
 }
 .delete{
-    float: right;
-    cursor: pointer;
+    padding-left: 10px;
+    background: transparent;
+    border: 0;
+    outline: black;
+}
+.delete:hover{
+    cursor:pointer;
 }

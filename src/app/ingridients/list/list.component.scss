@@ -1,17 +1,29 @@
+.wrap {
+    background: url(../../../assets/img/foods.jpg);
+    // background: url(../../../assets/img/goods.jpg);
+    width: 93vw;
+    height: 100vh;
 
-.list-item{
-    height: 500px;
-    padding-top: 50px;
+    background-position: bottom; 
 }
-.desk{
-    height: 400px;
-    width: 70%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
-    padding-top: 10px;
+.form-ing{
+float: left;
+width: 40%;
+padding-top: 20%;
 }
+.shelves{
 
+float: right;
+width: 60%;
+padding-top: 20%;
+padding-bottom: 20px;
+}
 h3{
-    font-size: 30px;
+    font-size: 34px ;
+    padding: 20px;
+}
+.next{
+    width: 360px;
+    height: 30px;
+  padding-left: 7px;
 }

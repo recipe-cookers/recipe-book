@@ -1,54 +1,30 @@
-
-.form{
-    height: 288px;
-    padding: 10px;
-}
 h3{
-    font-size: 30px;
+    font-size: 34px ;
+    padding: 20px;
+}
+.input{
     margin-bottom: 20px;
 }
-.form-add{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
+.form-style{
+    width: 300px;
+    height: 30px;
+  padding-left: 7px;
 }
-input{
-   height: 40px;
-   margin-bottom: 10px;
-   width: 300px;
-   font-size: 20px;
-   padding-left: 10px;
-}
-.datalist::-webkit-calendar-picker-indicator {
-    display: none;
-}
-select{
-   height: 40px;
-   margin-bottom: 10px;
-   width: 300px;
-   font-size: 20px;
-   padding-left: 10px;
-}
-.add{
-    cursor: pointer;
-}
-.next{
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    text-decoration: none;
-    color: green;
-    font-size: 30px;
-}
-.back{
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    text-decoration: none;
-    color: rgb(124, 4, 4);
-    font-size: 30px;
+.datalist{
+    width: 360px;
+    height: 30px;
+  padding-left: 7px;
 }
 .alert{
-    color: red;
-    font-size: 20;
+   margin-bottom: 15px;
+}
+.meas{
+    width: 60px;
+    height: 30px; 
+}
+.add{
+    color:#000;
+    font-size: 16px;
+    width: 360px;
+    height: 35px;
 }
