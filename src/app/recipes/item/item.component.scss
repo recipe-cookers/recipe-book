@@ -6,4 +6,24 @@
 ul{
   padding: 0;
 }
+.requiredIngridients{
+  justify-content: space-around;
+  display: flex;
+  font-style: italic;
+  font-size: 24px;
+}
+.ingridient {
+  float: left;
+  width: 50%;
+}
+.amountOfIngridient {
+  float: right;
+  width: 50%;
+}
+.flexwrap {
+  display: flex;
+}
+img{
+  border-radius: 15px;
+}
 
