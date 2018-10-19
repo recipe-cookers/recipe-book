@@ -1,7 +1,16 @@
-<div class="button">
+<div class="button" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" (click)="onClick()">
   <a routerLink={{data.url}} routerLinlActive="active">
-      <img src={{data.src}} alt="">
-    {{data.name}}
+    <div class={{display1}}>
+       <img src={{data.src1}}  alt=""  >
+    </div>
+    <div class={{display2}}>
+      <img src={{data.src2}}  alt=""  >
+    </div> 
+    <div class="{{display3}} ">
+      {{data.name}}
+    </div>  
+  
+    
   
   </a>
   

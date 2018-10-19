@@ -1,8 +1,9 @@
 nav{
     background: #232733;
     width: 120px;
-    height: 100vh;
-   
+    min-height: 100vh;
+    height: 100%;
+   position:fixed;
 }
 nav li{
     padding: 20px;
