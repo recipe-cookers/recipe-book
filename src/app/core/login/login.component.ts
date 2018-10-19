@@ -26,11 +26,11 @@ export class LoginComponent implements OnInit {
     this.model = {} as UserLogin;
   }
   testButton() {
-    const body = { 'name': 'name', 'email': 'name@test.com', 'password': '111111', 'password_confirmation': '111111' };
+    const body = { 'name': 'name', 'email': 'name@test1.com', 'password': '111111', 'password_confirmation': '111111' };
     const headers = new HttpHeaders()
       .append('Content-Type', 'application/json')
       .append('Accept', 'application/json' );
-    console.log(headers)
+    console.log(headers);
     return this.http.post('http://refrigerator-alevel.tk/api/auth/register', body, { headers: headers })
       .subscribe(
       data => { console.log(data); },

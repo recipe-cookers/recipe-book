@@ -5,7 +5,7 @@
     <div class="wrapFlex">
       <div class="photo"><img src={{item.image}}></div>
       <div class="wrap">
-        <div class="description">{{item.description.slice(0,200)+'...'}}</div>
+        <div class="description">{{item.description ? item.description : item.recipeInstructions.slice(0,2)}}</div>
         <p><a [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)">More</a></p>
       </div>
     </div>

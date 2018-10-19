@@ -11,7 +11,7 @@ export class RecipeService {
 
   constructor() { }
 
-  getRecipies(): Observable<IRecipe[]> {
+  getRecipies(): Observable<{}> {
     return of(recipies);
   }
 
