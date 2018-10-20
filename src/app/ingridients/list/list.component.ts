@@ -7,7 +7,7 @@ import { ingridients } from '../../shared/products.data';
   selector: 'ingridients-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
- 
+
 })
 export class IngridientsListComponent implements OnInit {
  ingridients:Ingridient[];
@@ -17,13 +17,13 @@ export class IngridientsListComponent implements OnInit {
  }
 
  ngOnInit(){
-  this.ingridients =this.ingridientsService.getIngridients();
-  
+  this.ingridients = this.ingridientsService.getIngridients();
+
 }
 
   delete(ingridient:Ingridient){
     this.ingridientsService.deleteIngridient(ingridient);
   }
-     
+
 
 }
