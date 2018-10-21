@@ -11,12 +11,13 @@ import {AuthService} from '../services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
   model = {} as UserRegister;
-  constructor(private auth: AuthService, private router: Router, private http: HttpClient) {};
+  constructor(private auth: AuthService, private router: Router, private http: HttpClient) {}
   submitted = false;
 
   onSubmit(e, registerForm) {
     this.submitted = true;
-    this.auth.registerUser({registerForm}).subscribe(() => {
+    this.auth.registerUser({...registerForm.value}).subscribe((res) => {
+      console.log(res);
       this.router.navigateByUrl('/login');
     });
   }

@@ -40,7 +40,7 @@
         <input type="checkbox" id="checkbox1" class="checkbox" checked="checked"/>
         <span id="remember">Remember me</span>
       </div>
-      <a href="#">Log in</a>
+      <a (click)="onSubmit($event,loginForm)">Log in</a>
       <button routerLink="/registration">Don't have an account? Register</button>
       <!--<button type="button" class="btn btn-primary" (click)="testButton()">Test</button>-->
 
