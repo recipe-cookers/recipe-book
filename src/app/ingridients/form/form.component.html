@@ -1,15 +1,18 @@
 <div class="form">
   <h3>Добавить ингредиенты</h3>
   <form class="form-add" (ngSubmit)='onSubmit(); form.reset()' #form='ngForm'>
-    <div class='input'><input class="datalist" type="text" list="product" placeholder="Добавить ингредиент" name = 'ingridient' [(ngModel)]="title" required></div>
-    <datalist id="product">
-      <option>сахар</option>
-      <option>соль</option>
-      <option>яблоко</option>
-      <option>свинина</option>
-      <option>мука</option>
-      <option>перец</option>
-  </datalist>
+    <form [formGroup]="addForm"  (ngSubmit)='onSubmit(); form.reset()'>
+      <div [formGroup]="rangeForm">
+        <div class='input'><input class="datalist" type="text" list="product" placeholder="Добавить ингредиент"
+        name = 'ingridient'  formControlName="ingridient" [(ngModel)]="title" required></div>
+        <datalist id="product">
+          <option *ngFor="let bas of basicIngridient">{{bas.name}}</option>
+        </datalist>
+        <div *ngIf="rangeForm.errors?.outsideRange && title !=''" class="alert">
+            Укажите ингредиент из списка
+        </div>
+      </div>
+    </form>
     <div class='input'><input type="text" placeholder="Колличество" name = 'amount' 
     [(ngModel)]="titleAmount" #amount="ngModel" required pattern="\-?\d+(\.\d{0,})?"></div>
     <div [hidden]="amount.valid || amount.untouched" class="alert">
@@ -27,8 +30,6 @@
         </select>
       </div>
     </form>
-    <button class="add" type="submit" [disabled]='form.form.invalid'>Добавить</button>
+    <button class="add" type="submit" [disabled]='form.form.invalid || !addForm.valid'>Добавить</button>
   </form>
-  <a class="next" routerLink="/recipies">Подобрать рецепт</a>
-  <a class="back" routerLink="">Назад</a>
 </div>

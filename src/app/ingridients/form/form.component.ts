@@ -1,6 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { IngridientsService } from '../../shared/services/ingridients.service';
-import { Ingridient } from '../../shared/models/product.model';
+import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder} from '@angular/forms';
+
 
 @Component({
   selector: 'ingridients-form',
@@ -8,13 +9,49 @@ import { Ingridient } from '../../shared/models/product.model';
   styleUrls: ['./form.component.scss'],
   providers: [IngridientsService]
 })
-export class IngridientsFormComponent  {
+export class IngridientsFormComponent implements OnInit {
+
+  addForm: FormGroup;
+  rangeForm: FormGroup;
 
   title:string='';
   titleAmount:string='';
   titleMeasure:string='гр.';
-  
-  constructor(private ingridientsService:IngridientsService){  
+
+  basicIngridient:Array<{id:number, name:string}>=[
+    {id:0, name:"сахар"},
+    {id:1, name:"свинина"},
+    {id:2, name:"уксус"},
+    {id:3, name:"яблоко"},
+    {id:4, name:"оливковое масло"},
+    {id:5, name:"перец"},
+    {id:6, name:"помидор"}
+  ];
+ 
+  constructor(private ingridientsService:IngridientsService, public formBuilder: FormBuilder){  
+    this.rangeForm = formBuilder.group({
+      'ingridient' : new FormControl("", [Validators.required]),
+      'list' : new FormControl('')
+    }, {
+      validator: this.specificValueInsideRange.bind(this)
+    });
+    this.addForm = formBuilder.group({
+      'rangeForm': this.rangeForm,
+    
+    });
+    
+ }
+ 
+ specificValueInsideRange(group: AbstractControl) {
+
+  const selectedValue = this.basicIngridient.find(bas => bas.name == group.value.ingridient);
+  if(!selectedValue) {
+    return {
+      outsideRange: true
+    };
+  }
+}
+ ngOnInit(){
  }
  
   onSubmit(){
@@ -22,3 +59,4 @@ export class IngridientsFormComponent  {
   }
   
 }
+
