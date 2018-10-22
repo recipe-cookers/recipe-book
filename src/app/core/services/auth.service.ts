@@ -10,22 +10,20 @@ export class AuthService {
   public getToken(): string {
     return localStorage.getItem('token');
   }
-
-  public isAuthenticated(): boolean {
-    return !!this.getToken();
+  public setUser(user): void {
+    return localStorage.setItem('currentUser', JSON.stringify(user));
   }
-
   public setToken(token): void {
     return localStorage.setItem('token', token);
   }
   public loginUser(form) {
     return this.http
-      .post<{email: string, password: string, token: string}>
+      .post<any>
       ('http://refrigerator-alevel.tk/api/auth/login', form, {headers: this.headers});
   }
   public registerUser(form) {
     return this.http
-      .post<{name: string, email: string, password: string, password_confirmation: string}>
+      .post<any>
       ('http://refrigerator-alevel.tk/api/auth/register', form, {headers: this.headers});
   }
 }

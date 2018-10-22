@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import {FormsModule} from '@angular/forms';
 import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guards/auth.guard';
 
 
 @NgModule({
@@ -17,6 +18,6 @@ import {AuthService} from './services/auth.service';
   ],
   exports: [RegistrationComponent, LoginComponent, ProfileComponent, PageNotFoundComponent],
   declarations: [RegistrationComponent, LoginComponent, ProfileComponent, PageNotFoundComponent],
-  providers: [AuthService]
+  providers: [AuthService, AuthGuard]
 })
 export class CoreModule { }
