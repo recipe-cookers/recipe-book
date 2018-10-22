@@ -10,11 +10,14 @@ export class AuthService {
   public getToken(): string {
     return localStorage.getItem('token');
   }
+  public setToken(token): void {
+    return localStorage.setItem('token', token);
+  }
   public setUser(user): void {
     return localStorage.setItem('currentUser', JSON.stringify(user));
   }
-  public setToken(token): void {
-    return localStorage.setItem('token', token);
+  public logOut(): void {
+    return localStorage.removeItem('currentUser');
   }
   public loginUser(form) {
     return this.http
