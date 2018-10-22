@@ -9,7 +9,7 @@ import { IngridientsModule } from './ingridients/ingridients.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { DetailsModule } from './details/details.module';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngridientsService } from './shared/services/ingridients.service';
 import { NavComponent } from './nav/nav.component';
 import { ButtonComponent } from './button/button.component';
@@ -31,10 +31,11 @@ import { ButtonComponent } from './button/button.component';
     DetailsModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
   providers: [IngridientsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
