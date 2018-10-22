@@ -2,8 +2,10 @@
   <div class ="list-item">
     <div class = "desk">
       <h3>Имеющиеся ингредиенты</h3>
-      <ingridients-item *ngFor='let ingridient of ingridients' [product]='ingridient' 
-      (delete)='delete($event)'></ingridients-item>
+      <div class="allitem">
+        <ingridients-item *ngFor='let ingridient of ingridients' [product]='ingridient' 
+        (delete)='delete($event)'></ingridients-item>
+      </div>
     </div>
   </div>
   <ingridients-form></ingridients-form>
