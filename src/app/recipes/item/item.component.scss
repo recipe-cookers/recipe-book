@@ -6,4 +6,34 @@
 ul{
   padding: 0;
 }
+.description {
+  display: flex;
+  text-align: justify;
+  min-width: 50%;
+  float: right;
+}
+.requiredIngridients{
+  justify-content: space-around;
+  display: flex;
+  font-style: italic;
+  font-size: 24px;
+}
+.ingridient {
+  float: left;
+  width: 50%;
+}
+.amountOfIngridient {
+  float: right;
+  width: 50%;
+}
+.flexwrap {
+  display: flex;
+}
+.photo{
+  float: left;
+
+}
+img{
+  border-radius: 15px;
+}
 

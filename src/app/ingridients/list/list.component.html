@@ -1,12 +1,17 @@
-<section class='list'>
-  <div class ="list-item">
-    <div class = "desk">
+<div class="wrap">
+    <div class="form-ing">
+     
+   
+  <ingridients-form></ingridients-form>
+    </div>
+    <div class="shelves">
       <h3>Имеющиеся ингредиенты</h3>
       <div class="allitem">
         <ingridients-item *ngFor='let ingridient of ingridients' [product]='ingridient' 
         (delete)='delete($event)'></ingridients-item>
       </div>
     </div>
-  </div>
-  <ingridients-form></ingridients-form>
-</section>
+    <button class="next" routerLink="/recipies">
+    
+      Подобрать рецепт</button>
+</div>
