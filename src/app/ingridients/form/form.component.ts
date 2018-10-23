@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { IngridientsService } from '../../shared/services/ingridients.service';
 import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder} from '@angular/forms';
+import { IIngridient } from '../../shared/models/ingridient.model';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Component({
@@ -27,10 +29,13 @@ export class IngridientsFormComponent implements OnInit {
     {id:5, name:"перец"},
     {id:6, name:"помидор"}
   ];
+  getIngridient:IIngridient;
+  
  
-  constructor(private ingridientsService:IngridientsService, public formBuilder: FormBuilder){  
+  constructor(private ingridientsService:IngridientsService, public formBuilder: FormBuilder, 
+    private http: HttpClient){  
     this.rangeForm = formBuilder.group({
-      'ingridient' : new FormControl("", [Validators.required]),
+      'ingridient' : new FormControl("", Validators.required),
       'list' : new FormControl('')
     }, {
       validator: this.specificValueInsideRange.bind(this)
@@ -39,7 +44,7 @@ export class IngridientsFormComponent implements OnInit {
       'rangeForm': this.rangeForm,
     
     });
-    
+   
  }
  
  specificValueInsideRange(group: AbstractControl) {
@@ -52,10 +57,13 @@ export class IngridientsFormComponent implements OnInit {
   }
 }
  ngOnInit(){
- }
+//   this.http.get('user.json').subscribe((data:User) => this.user=data);
+//  console.log(this.user);
+}
  
   onSubmit(){
     this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleMeasure);
+    this.rangeForm.reset();
   }
   
 }

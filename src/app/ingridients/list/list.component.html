@@ -1,17 +1,13 @@
-<div class="wrap">
-    <div class="form-ing">
-     
-   
-  <ingridients-form></ingridients-form>
-    </div>
-    <div class="shelves">
+<div class="list">
+    <div class="desk">
       <h3>Имеющиеся ингредиенты</h3>
-      <div class="allitem">
-        <ingridients-item *ngFor='let ingridient of ingridients' [product]='ingridient' 
-        (delete)='delete($event)'></ingridients-item>
+      <div class="list-item">
+        <div class="allitem">
+          <ingridients-item *ngFor='let ingridient of ingridients' [product]='ingridient' 
+          (delete)='delete($event)'></ingridients-item>
+        </div>
+        <button class="next" routerLink="/recipies">Подобрать рецепт</button>
       </div>
-    </div>
-    <button class="next" routerLink="/recipies">
-    
-      Подобрать рецепт</button>
+    </div>    
+    <ingridients-form></ingridients-form>
 </div>

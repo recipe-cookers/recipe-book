@@ -1,9 +1,9 @@
-<div class="form">
+<div class="form panel">
   <h3>Добавить ингредиенты</h3>
   <form class="form-add" (ngSubmit)='onSubmit(); form.reset()' #form='ngForm'>
-    <form [formGroup]="addForm"  (ngSubmit)='onSubmit(); form.reset()'>
+    <form [formGroup]="addForm">
       <div [formGroup]="rangeForm">
-        <div class='input'><input class="datalist" type="text" list="product" placeholder="Добавить ингредиент"
+        <div class='input'><input class="datalist" type="text" list="product" placeholder="Ингредиент"
         name = 'ingridient'  formControlName="ingridient" [(ngModel)]="title" required></div>
         <datalist id="product">
           <option *ngFor="let bas of basicIngridient">{{bas.name}}</option>
@@ -30,6 +30,6 @@
         </select>
       </div>
     </form>
-    <button class="add" type="submit" [disabled]='form.form.invalid || !addForm.valid'>Добавить</button>
+    <button class="add" type="submit" [disabled]='form.form.invalid || !addForm.valid'></button>
   </form>
 </div>
