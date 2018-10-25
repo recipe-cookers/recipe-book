@@ -1,4 +1,6 @@
-
+.other{
+  padding-left: 120px;
+}
 .main {
     width: 100%;
     text-align: center;
@@ -17,4 +19,9 @@ button:hover {
 }
 .flex{
     display: flex;
+}
+@media (max-width: 600px){
+  .other{
+    padding: 0 0 100px 0;
+  }
 }

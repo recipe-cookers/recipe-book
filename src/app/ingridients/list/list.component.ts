@@ -10,18 +10,18 @@ import { Ingridients } from '../../shared/products.data';
 
 })
 export class IngridientsListComponent implements OnInit {
- ingridients:Ingridient[];
+ ingridients: Ingridient[];
 
- constructor(private ingridientsService:IngridientsService){
+ constructor(private ingridientsService: IngridientsService) {
     this.ingridients = [];
-    
+
  }
 
- ngOnInit(){
+ ngOnInit() {
   this.ingridients = this.ingridientsService.getIngridients();
 }
 
-  delete(ingridient:Ingridient){
+  delete(ingridient: Ingridient) {
     this.ingridientsService.deleteIngridient(ingridient);
   }
 

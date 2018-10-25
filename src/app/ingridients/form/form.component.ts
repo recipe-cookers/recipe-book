@@ -16,46 +16,46 @@ export class IngridientsFormComponent implements OnInit {
   addForm: FormGroup;
   rangeForm: FormGroup;
 
-  title:string='';
-  titleAmount:string='';
-  titleMeasure:string='гр.';
+  title = '';
+  titleAmount = '';
+  titleMeasure = 'гр.';
 
-  basicIngridient:BasicIngridient[]=[];
- 
-  constructor(private ingridientsService:IngridientsService, public formBuilder: FormBuilder, 
-    private httpService: HttpIngridient){
+  basicIngridient: BasicIngridient[] = [];
+
+  constructor(private ingridientsService: IngridientsService, public formBuilder: FormBuilder,
+    private httpService: HttpIngridient) {
 
     this.rangeForm = formBuilder.group({
-      'ingridient' : new FormControl("", Validators.required),
+      'ingridient' : new FormControl('', Validators.required),
       'list' : new FormControl('')
     }, {
       validator: this.specificValueInsideRange.bind(this)
     });
     this.addForm = formBuilder.group({
       'rangeForm': this.rangeForm,
-    
+
     });
-   
+
  }
- 
+
  specificValueInsideRange(group: AbstractControl) {
 
   const selectedValue = this.basicIngridient.find(bas => bas.name == group.value.ingridient);
-   if(!selectedValue) {
+   if (!selectedValue) {
      return {
        outsideRange: true
      };
    }
 }
- ngOnInit(){
-  this.httpService.getData().subscribe(data => this.basicIngridient=data["ingredients"]);
- 
+ ngOnInit() {
+  this.httpService.getData().subscribe(data => this.basicIngridient = data['ingredients']);
+
 }
- 
-  onSubmit(){
+
+  onSubmit() {
     this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleMeasure);
-    this.rangeForm.reset({ingridient:''});
+    this.rangeForm.reset({ingridient: ''});
   }
-  
+
 }
 

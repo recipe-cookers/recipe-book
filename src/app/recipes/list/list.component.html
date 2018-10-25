@@ -1,20 +1,21 @@
-<app-search></app-search>
+
 <div class="wrapper">
-<ul>
-  <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies;">
-    <div class="itemRecipe">
-    <!-- <div class="title" >{{item.name}}</div> -->
+  <app-search></app-search>
+  <ul>
+    <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies;">
+      <div class="itemRecipe">
+      <!-- <div class="title" >{{item.name}}</div> -->
 
-      <img src={{item.image}}>
-        <div class="bg">
+        <img src={{item.image}}>
+          <div class="bg">
 
-        </div>
-        <div class="name">
-          <div class="title" >{{item.name}}</div>
-        </div>
-      <!-- <div class="description">{{item.description ? item.description : item.recipeInstructions.slice(0,2)}}</div> -->
-    </div>
-  </li>
-</ul>
+          </div>
+          <div class="name">
+            <div class="title" >{{item.name}}</div>
+          </div>
+        <!-- <div class="description">{{item.description ? item.description : item.recipeInstructions.slice(0,2)}}</div> -->
+      </div>
+    </li>
+  </ul>
 </div>
 <hr>

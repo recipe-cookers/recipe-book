@@ -3,28 +3,28 @@ import { Ingridient } from '../models/product.model';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class IngridientsService{
-    ingridients:Ingridient[] =Ingridients;
+export class IngridientsService {
+    ingridients: Ingridient[] = Ingridients;
 
-    constructor(){
-        
+    constructor() {
+
     }
-   
-    getIngridients():Ingridient[]{
+
+    getIngridients(): Ingridient[] {
         return this.ingridients;
     }
 
-    createIngridient(title:string, titleAmount:string, titleMeasure:string){
+    createIngridient(title: string, titleAmount: string, titleMeasure: string) {
         const ingridient = new Ingridient(title, titleAmount, titleMeasure);
         this.ingridients.push(ingridient);
 
     }
 
-    deleteIngridient(ingridient:Ingridient){
-        let index = this.ingridients.indexOf(ingridient);
-        if(index>-1){
+    deleteIngridient(ingridient: Ingridient) {
+        const index = this.ingridients.indexOf(ingridient);
+        if (index > -1) {
           this.ingridients.splice(index, 1);
-        };
+        }
     }
-    
+
 }
