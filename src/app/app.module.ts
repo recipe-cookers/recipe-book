@@ -11,6 +11,7 @@ import { DetailsModule } from './details/details.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngridientsService } from './shared/services/ingridients.service';
+import { HttpIngridient } from './shared/services/basicIngridient.service';
 import { NavComponent } from './nav/nav.component';
 import { ButtonComponent } from './button/button.component';
 
@@ -35,7 +36,7 @@ import { ButtonComponent } from './button/button.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [IngridientsService],
+  providers: [IngridientsService, HttpIngridient],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
