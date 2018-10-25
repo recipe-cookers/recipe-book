@@ -8,15 +8,15 @@ import { Ingridient} from '../../shared/models/product.model';
   styleUrls: ['./item.component.scss']
 })
 export class IngridientsItemComponent implements OnInit {
- 
-@Input() product:Ingridient;
+
+@Input() product: Ingridient;
 
 @Output() delete = new EventEmitter();
 
-onDelete(){
+onDelete() {
   this.delete.emit(this.product);
 }
-  
+
   constructor() { }
 
   ngOnInit() {

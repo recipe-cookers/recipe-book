@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
+import {ProfileService} from '../services/profile.service';
+import {UserRegister} from '../../shared/models/login.model';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +10,27 @@ import {AuthService} from '../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
-  user1 = this.auth.getUser();
-  user = this.user1.name;
+  constructor(private auth: AuthService, private prof: ProfileService) { }
+  model = {} as UserRegister;
+  user = this.auth.getUser().name;
+  public errorEmail: string;
+  public errorPass: string;
+  public subEmail(e, changeEmailForm) {
+    console.log(changeEmailForm.value);
+    this.prof.EmailNameChange({...changeEmailForm.value}).subscribe(
+      res => { console.log(res);
+        this.auth.updateUserEmail(res.email, res.name); },
+      err => { console.log(err); this.errorEmail = JSON.stringify(err.error.errors.email);
+      console.log(this.errorEmail); });
+  }
+  public subPass(e, changePassForm) {
+    console.log(changePassForm.value);
+    this.prof.PasswordChange({...changePassForm.value}).subscribe(
+      res => { console.log(res);
+        this.auth.updateUserPass(res.password); },
+      err => { console.log(err); this.errorPass = JSON.stringify(err.error.errors.password);
+        console.log(this.errorPass); });
+  }
   ngOnInit() {
   }
 

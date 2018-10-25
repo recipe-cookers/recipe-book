@@ -13,7 +13,7 @@
         </div>
       </div>
     </form>
-    <div class='input'><input type="text" placeholder="Колличество" name = 'amount' 
+    <div class='input'><input type="text" placeholder="Количество" name = 'amount'
     [(ngModel)]="titleAmount" #amount="ngModel" required pattern="\-?\d+(\.\d{0,})?"></div>
     <div [hidden]="amount.valid || amount.untouched" class="alert">
       Укажите число (целое или дробное)

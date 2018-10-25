@@ -2,8 +2,8 @@
   <div id="container">
     <h1>Register</h1>
     <form #registerForm="ngForm" (ngSubmit)="onSubmit($event, registerForm)">
-      <input type="text" name="name" placeholder="Name" minlength="4" [(ngModel)]="model.name" #name="ngModel" required>
-      <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" #name="ngModel" required>
+      <input type="text" name="name" placeholder="Name" minlength="4" [(ngModel)]="model.name" required>
+      <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" required>
       <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
       <input type="password" name="password_confirmation" placeholder="Confirm Password" [(ngModel)]="model.password_confirmation" required>
       <a (click)="onSubmit($event,registerForm)">Register</a>

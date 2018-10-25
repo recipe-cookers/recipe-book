@@ -34,7 +34,7 @@
   <div id="container">
     <h1>Log In</h1>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit($event, loginForm)">
-      <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" #name="ngModel" required>
+      <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" required>
       <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
       <div id="remember-container">
         <input type="checkbox" id="checkbox1" class="checkbox" checked="checked"/>
