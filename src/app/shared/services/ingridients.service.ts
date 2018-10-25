@@ -1,17 +1,15 @@
-import { ingridients } from '../products.data';
+import { Ingridients } from '../products.data';
 import { Ingridient } from '../models/product.model';
-import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class IngridientsService{
-    ingridients:Ingridient[] =ingridients;
+    ingridients:Ingridient[] =Ingridients;
 
-    constructor(private http:HttpClient){
+    constructor(){
         
     }
- 
-
+   
     getIngridients():Ingridient[]{
         return this.ingridients;
     }

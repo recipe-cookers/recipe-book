@@ -8,6 +8,7 @@ import { IngridientsComponent } from './ingridients.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngridientRouterModule } from './ingridients-routing.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

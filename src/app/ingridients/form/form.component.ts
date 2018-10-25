@@ -1,8 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { IngridientsService } from '../../shared/services/ingridients.service';
+import { HttpIngridient } from '../../shared/services/basicIngridient.service';
 import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder} from '@angular/forms';
-import { IIngridient } from '../../shared/models/ingridient.model';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { BasicIngridient } from '../../shared/models/basicIngridient.model';
 
 
 @Component({
@@ -20,20 +20,11 @@ export class IngridientsFormComponent implements OnInit {
   titleAmount:string='';
   titleMeasure:string='гр.';
 
-  basicIngridient:Array<{id:number, name:string}>=[
-    {id:0, name:"сахар"},
-    {id:1, name:"свинина"},
-    {id:2, name:"уксус"},
-    {id:3, name:"яблоко"},
-    {id:4, name:"оливковое масло"},
-    {id:5, name:"перец"},
-    {id:6, name:"помидор"}
-  ];
-  getIngridient:IIngridient;
-  
+  basicIngridient:BasicIngridient[]=[];
  
   constructor(private ingridientsService:IngridientsService, public formBuilder: FormBuilder, 
-    private http: HttpClient){  
+    private httpService: HttpIngridient){
+
     this.rangeForm = formBuilder.group({
       'ingridient' : new FormControl("", Validators.required),
       'list' : new FormControl('')
@@ -50,20 +41,20 @@ export class IngridientsFormComponent implements OnInit {
  specificValueInsideRange(group: AbstractControl) {
 
   const selectedValue = this.basicIngridient.find(bas => bas.name == group.value.ingridient);
-  if(!selectedValue) {
-    return {
-      outsideRange: true
-    };
-  }
+   if(!selectedValue) {
+     return {
+       outsideRange: true
+     };
+   }
 }
  ngOnInit(){
-//   this.http.get('user.json').subscribe((data:User) => this.user=data);
-//  console.log(this.user);
+  this.httpService.getData().subscribe(data => this.basicIngridient=data["ingredients"]);
+ 
 }
  
   onSubmit(){
     this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleMeasure);
-    this.rangeForm.reset();
+    this.rangeForm.reset({ingridient:''});
   }
   
 }
