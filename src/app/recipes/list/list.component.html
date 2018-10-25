@@ -3,11 +3,16 @@
 <ul>
   <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies;">
     <div class="itemRecipe">
-    <div class="title" >{{item.name}}</div>
-    <div class="wrapFlex">
-      <div class="photo"><img src={{item.image}}></div>
-      <div class="description">{{item.description ? item.description : item.recipeInstructions.slice(0,2)}}</div>
-    </div>
+    <!-- <div class="title" >{{item.name}}</div> -->
+
+      <img src={{item.image}}>
+        <div class="bg">
+
+        </div>
+        <div class="name">
+          <div class="title" >{{item.name}}</div>
+        </div>
+      <!-- <div class="description">{{item.description ? item.description : item.recipeInstructions.slice(0,2)}}</div> -->
     </div>
   </li>
 </ul>

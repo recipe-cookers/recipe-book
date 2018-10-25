@@ -1,6 +1,7 @@
-export const ingridients = [
+export const Ingridients = [
  {
-     ingridient:"свинина",
+     id:0,
+     ingridient:"Свинина",
      amount: "500",
      measure:"гр."
  }
