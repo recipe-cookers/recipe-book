@@ -5,7 +5,7 @@ import { IngridientsItemComponent } from './item/item.component';
 import { IngridientsFormComponent } from './form/form.component';
 import { IngridientsApplyComponent } from './apply/apply.component';
 import { IngridientsComponent } from './ingridients.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngridientRouterModule } from './ingridients-routing.module';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { IngridientRouterModule } from './ingridients-routing.module';
     CommonModule,
     IngridientRouterModule,
     FormsModule,
-    
+    ReactiveFormsModule
   ],
   declarations: [IngridientsListComponent, IngridientsItemComponent, IngridientsFormComponent, IngridientsApplyComponent, IngridientsComponent, IngridientsComponent],
   exports: [IngridientsListComponent, IngridientsItemComponent, IngridientsFormComponent, IngridientsApplyComponent, IngridientsComponent]

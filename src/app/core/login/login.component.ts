@@ -15,10 +15,13 @@ export class LoginComponent implements OnInit {
   submitted = false;
 
   onSubmit(e, loginForm) {
+    console.log(loginForm.value);
     this.submitted = true;
-    this.auth.loginUser({...loginForm.value, token: loginForm.value.password}).subscribe(res => {
-      this.auth.setToken(res.token);
-      this.router.navigateByUrl('/');
+    this.auth.loginUser({...loginForm.value}).subscribe(res => {
+      console.log(res);
+      this.auth.setToken(res.access_token);
+      this.auth.setUser(res.user);
+      // this.router.navigateByUrl('/');
     });
   }
   clearForm(loginForm) {

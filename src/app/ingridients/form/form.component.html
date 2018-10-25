@@ -1,34 +1,35 @@
-<div class="form">
+<div class="form panel">
   <h3>Добавить ингредиенты</h3>
   <form class="form-add" (ngSubmit)='onSubmit(); form.reset()' #form='ngForm'>
-    <div class='input'><input class="datalist " type="text" list="product" placeholder="Добавить ингредиент" name = 'ingridient' [(ngModel)]="title" required></div>
-    <datalist id="product">
-      <option>сахар</option>
-      <option>соль</option>
-      <option>яблоко</option>
-      <option>свинина</option>
-      <option>мука</option>
-      <option>перец</option>
-  </datalist>
-    <div class='input'><input class="form-style" type="text" placeholder="Колличество" name = 'amount' 
-    [(ngModel)]="titleAmount" #amount="ngModel" required pattern="\-?\d+(\.\d{0,})?">
-    <select class="meas"  name = 'measure' [(ngModel)]="titleMeasure" required>
-      <option>гр.</option>
-      <option>мл.</option>
-      <option>шт.</option>
-      <option>ст.л.</option>
-      <option>ч.л.</option>
-      <option>ст.</option>
-    </select>
-  </div>
+    <form [formGroup]="addForm">
+      <div [formGroup]="rangeForm">
+        <div class='input'><input class="datalist" type="text" list="product" placeholder="Ингредиент"
+        name = 'ingridient'  formControlName="ingridient" [(ngModel)]="title" required></div>
+        <datalist id="product">
+          <option *ngFor="let bas of basicIngridient">{{bas.name}}</option>
+        </datalist>
+        <div *ngIf="rangeForm.errors?.outsideRange && title !=''" class="alert">
+            Укажите ингредиент из списка
+        </div>
+      </div>
+    </form>
+    <div class='input'><input type="text" placeholder="Колличество" name = 'amount' 
+    [(ngModel)]="titleAmount" #amount="ngModel" required pattern="\-?\d+(\.\d{0,})?"></div>
     <div [hidden]="amount.valid || amount.untouched" class="alert">
       Укажите число (целое или дробное)
     </div>
-   
-   
-    <button class="add" type="submit" [disabled]='form.form.invalid'>
-        Добавить новый ингредиент</button>
+    <form >
+      <div clacc='input'>
+        <select  name = 'measure' [(ngModel)]="titleMeasure" required>
+          <option>гр.</option>
+          <option>мл.</option>
+          <option>шт.</option>
+          <option>ст.л.</option>
+          <option>ч.л.</option>
+          <option>ст.</option>
+        </select>
+      </div>
+    </form>
+    <button class="add" type="submit" [disabled]='form.form.invalid || !addForm.valid'></button>
   </form>
-
-
 </div>

@@ -6,6 +6,12 @@
 ul{
   padding: 0;
 }
+.description {
+  display: flex;
+  text-align: justify;
+  min-width: 50%;
+  float: right;
+}
 .requiredIngridients{
   justify-content: space-around;
   display: flex;
@@ -22,6 +28,10 @@ ul{
 }
 .flexwrap {
   display: flex;
+}
+.photo{
+  float: left;
+
 }
 img{
   border-radius: 15px;

@@ -1,17 +1,17 @@
 <div class="button" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" >
-  <a routerLink={{data.url}} routerLinlActive="active">
+  <a routerLink={{data.url}} (click)="onClick()">
     <div class={{display1}}>
        <img src={{data.src1}}  alt=""  >
     </div>
     <div class={{display2}}>
       <img src={{data.src2}}  alt=""  >
-    </div> 
+    </div>
     <div class="{{display3}} ">
       {{data.name}}
-    </div>  
-  
-    
-  
+    </div>
+
+
+
   </a>
-  
+
 </div>
