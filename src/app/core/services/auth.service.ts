@@ -16,6 +16,9 @@ export class AuthService {
   public setUser(user): void {
     return localStorage.setItem('currentUser', JSON.stringify(user));
   }
+  public getUser() {
+    return JSON.parse(localStorage.getItem('currentUser'));
+  }
   public logOut(): void {
     return localStorage.removeItem('currentUser');
   }
