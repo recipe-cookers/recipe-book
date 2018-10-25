@@ -1,12 +1,15 @@
-
+body, html {
+    height: 100%;
+  }
 .list{
     width: 100vw;
     height: 100vh;
     margin-left: -120px;
-    background-image:url(../../../assets/img/ingridients.jpg);
+    background:url(../../../assets/img/ingridients.jpg) center center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+   
+    overflow-y: auto;
 }
 .list-item{
     height: 400px;
@@ -14,7 +17,7 @@
     margin-bottom: 30px;
 }
 .desk{
-    height: 430px;
+    height: auto;
     width: 100%;
     max-width: 500px;
     position: relative;
@@ -64,6 +67,7 @@ h3{
     box-shadow: 3px 3px 10px rgb(104, 102, 102);
     padding: 5px;
     transition: 0.5s ease-in-out;
+    margin-top: 5px;
 }
 .next:hover{
     color: #ffda44;
