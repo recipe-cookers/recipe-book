@@ -2,9 +2,8 @@ body, html {
   height: 100%;
 }
 .bg {
-  width: 100vw;
+  width: calc(100vw - 104px);
   height: 100vh;
-  margin-left: -120px;
   background: url(../../../assets/img/plate.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -22,7 +21,7 @@ img{
 #container{
   position: absolute;
   top: 0;
-  left: 0;
+  left: 104px;
   right: 0;
   bottom: 0;
   margin: auto;
@@ -125,7 +124,7 @@ a:hover{
 }
 
 .checkbox:checked:active {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 3px rgba(0,0,0,0.1);
   border-radius: 50%;
   border: 1px solid #575756;
 }
@@ -142,7 +141,7 @@ a:hover{
   content: '\2714';
   font-size: 10px;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 4px;
   color: #fff;
   border-radius: 50%;
@@ -155,6 +154,13 @@ a:hover{
   top: 9px;
   left: 3px;
 }
-
+@media (max-width: 600px){
+  .bg{
+    width: 100vw;
+  }
+  #container {
+    left: 0;
+  }
+}
 
 
