@@ -36,14 +36,10 @@
     <form #loginForm="ngForm" (ngSubmit)="onSubmit($event, loginForm)">
       <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" required>
       <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
-      <div id="remember-container">
-        <input type="checkbox" id="checkbox1" class="checkbox" checked="checked"/>
-        <span id="remember">Remember me</span>
-      </div>
-      <a (click)="onSubmit($event,loginForm)">Log in</a>
-      <button routerLink="/registration">Don't have an account? Register</button>
+      <a>Forgot password?</a>
+      <button (click)="onSubmit($event,loginForm)">Log in</button>
+      <a routerLink="/registration">Don't have an account? Register</a>
       <!--<button type="button" class="btn btn-primary" (click)="testButton()">Test</button>-->
-
     </form>
   </div>
 </div>

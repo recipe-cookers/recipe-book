@@ -2,9 +2,8 @@ body, html {
   height: 100%;
 }
 .bg {
-  width: 100vw;
+  width: calc(100vw - 104px);
   height: 100vh;
-  margin-left: -120px;
   background: url(../../../assets/img/plate.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -21,14 +20,16 @@ img{
 /* Login container */
 #container{
   position: absolute;
-  top: -4%;
-  left: 0;
+  top: 0;
+  left: 104px;
   right: 0;
-  bottom: 0;
+  bottom: 45px;
   margin: auto;
   width: 260px;
   height: 260px;
   border-radius: 5px;
+  //background: rgba(3,3,3,0.8);
+  //box-shadow: 1px 1px 50px #000;
 }
 
 /* Heading */
@@ -42,7 +43,7 @@ h1{
 }
 
 /* Inputs */
-a,
+button,
 input{
   font-family: 'AleksandraCRegular', sans-serif;
   text-decoration: none;
@@ -61,13 +62,13 @@ input{
   -o-transition: all 2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-button{
+a{
   border: none;
   background: transparent;
   color: #3c373c;
   outline: none;
 }
-button:hover{
+a:hover{
   color: #667675;
   cursor: pointer;
 }
@@ -90,16 +91,25 @@ input:focus{
   color: #333;  }
 
 /* Link */
-a{
-  font-family: 'AleksandraCRegular', sans-serif;
-  text-align: center;
+button{
+  color: #3c373c;
+  outline: none;
   padding: 4px 8px;
   background: rgba(249, 152, 25, 0.76);
 }
 
-a:hover{
+button:hover{
   opacity: 0.7;
   cursor: pointer;
+}
+
+@media (max-width: 600px){
+  .bg{
+    width: 100vw;
+  }
+  #container {
+    left: 0;
+  }
 }
 
 
