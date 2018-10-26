@@ -15,7 +15,7 @@ export class ProfileService {
     return this.http
       .put<any>
       ('http://refrigerator-alevel.tk/api/auth/user/password',
-        {form}, {headers: this.auth.AuthHeaders()});
+        {'old_password': form.old_password, 'password': form.password, 'password_confirmation': form.password_confirmation}, {headers: this.auth.AuthHeaders()});
   }
 
 }
