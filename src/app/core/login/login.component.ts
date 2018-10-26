@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   model = {} as UserLogin;
   submitted = false;
-
+  public errorEmail: string;
+  public errorPass: string;
   onSubmit(e, loginForm) {
     console.log(loginForm.value);
     this.submitted = true;
@@ -21,8 +22,11 @@ export class LoginComponent implements OnInit {
       console.log(res);
       this.auth.setToken(res.access_token);
       this.auth.setUser(res.user);
-      // this.router.navigateByUrl('/');
-    });
+      this.router.navigateByUrl('/ingridients');
+    }, err => {
+      this.errorPass = 'The given data is invalid!'
+    console.log(err); }
+    );
   }
   clearForm(loginForm) {
     console.log(loginForm);

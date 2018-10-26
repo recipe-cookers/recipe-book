@@ -35,9 +35,11 @@
     <h1>Log In</h1>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit($event, loginForm)">
       <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" required>
+      <div class="error">{{this.errorEmail}}</div>
       <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
+      <div class="error">{{this.errorPass}}</div>
       <a>Forgot password?</a>
-      <button (click)="onSubmit($event,loginForm)">Log in</button>
+      <button>Log in</button>
       <a routerLink="/registration">Don't have an account? Register</a>
       <!--<button type="button" class="btn btn-primary" (click)="testButton()">Test</button>-->
     </form>

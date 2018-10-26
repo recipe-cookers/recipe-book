@@ -79,7 +79,9 @@ input:focus{
   border-radius: 2px;
   border-bottom: 1px solid #575756;
 }
-
+.error{
+  color: #8c0000;
+}
 /* Placeholders */
 ::-webkit-input-placeholder {
   color: color(#575756 a(0.8)); }
