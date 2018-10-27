@@ -2,12 +2,12 @@
   position: relative;
   z-index: 1;
   color: rgba(155, 155, 155, 1);
-  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.8),
-    1px 1px 2px rgba(0, 0, 0, 1);
-  font-family: sans-serif;
+  font-family: AleksandraCRegular;
 }
 h3 {
   font-size: 2.5em;
+  color: white;
+  line-height: 65px;
 }
 .back-wraper {
   position: absolute;
@@ -16,6 +16,20 @@ h3 {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+.header{
+  width: 100%;
+  height: 65px;
+  background-color: #232733;
+  position: fixed;
+  top: 0;
+}
+.footer{
+  width: 100%;
+  height: 65px;
+  background-color: #232733;
+  position: fixed;
+  bottom: 0;
 }
 .background {
   position: absolute;
@@ -48,11 +62,9 @@ h3 {
   justify-content: center;
 }
 .btn-holder {
-  margin-top: 100px;
-  min-width: 170px;
-  display: flex;
+  min-width: 150px;
+  display: inline-block;
   justify-content: center;
-  align-items: flex-end;
   &.sub-btn {
     min-height: 50px;
     .btn {
@@ -60,32 +72,10 @@ h3 {
       height: 40px;
       line-height: 40px;
       font-size: 1.5em;
-      box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-        inset 3px 15px 10px rgba(255, 255, 255, 0.1),
-        inset -1px -1px 2px rgba(0, 0, 0, 0.5),
-        inset -3px -15px 45px rgba(0, 0, 0, 0.2),
-        1px 5px 30px -4px rgba(0, 0, 0, 1);
-    }
-    .before {
-      top: 62.5%;
-      width: 150px;
-      height: 50px;
-      box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.3),
-        inset -5px -15px 20px rgba(255, 255, 255, 0.1),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.5),
-        inset 5px 15px 40px rgba(0, 0, 0, 0.2),
-        -2px -5px 50px -5px rgba(255, 255, 255, 0.1),
-        2px 25px 30px -10px rgba(0, 0, 0, 0.4),
-        0px 0px 25px 8px rgba(60, 60, 60, 1);
+      line-height: 65px;
     }
     .btn:active {
-      color: rgba(0, 0, 0, 0.7);
-      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
-      box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-        inset 3px 15px 45px rgba(0, 0, 0, 0.2),
-        inset -1px -1px 2px rgba(0, 0, 0, 0.5),
-        inset -3px -15px 45px rgba(255, 255, 255, 0.1),
-        1px 5px 10px -4px rgba(0, 0, 0, 1);
+      color: #ffda44;
     }
   }
 }
@@ -94,59 +84,27 @@ h3 {
   user-select: none;
   position: relative;
   cursor: pointer;
-  width: 340px;
-  height: 340px;
   line-height: 340px;
-  background: #25292c;
+  background: #232733;
   text-align: center;
-  border-radius: 999px;
+  color: whitesmoke;
   text-transform: uppercase;
-  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-    inset 3px 15px 45px rgba(255, 255, 255, 0.1),
-    inset -1px -1px 2px rgba(0, 0, 0, 0.5),
-    inset -3px -15px 45px rgba(0, 0, 0, 0.2), 1px 5px 30px -4px rgba(0, 0, 0, 1);
   -webkit-transition: 0.1s ease-out;
   -moz-transition: 0.1s ease-out;
   -o-transition: 0.1s ease-out;
   transition: 0.1s ease-out;
   z-index: 1;
-  font-size: 2.5em;
-  &:focus {
-    outline: none;
-  }
-  &:active {
-    color: rgba(0, 0, 0, 0.7);
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
-    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-      inset 3px 15px 45px rgba(0, 0, 0, 0.2),
-      inset -1px -1px 2px rgba(0, 0, 0, 0.5),
-      inset -3px -15px 45px rgba(255, 255, 255, 0.1),
-      1px 5px 10px -4px rgba(0, 0, 0, 1);
+  font-size: 3em;
+  &:hover {
+    color: #ffda44;
   }
 }
-.before {
-  background: #1a1a1a;
-  width: 355px;
-  height: 355px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  border-radius: 999px;
-  box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.3),
-    inset -5px -15px 40px rgba(255, 255, 255, 0.1),
-    inset 1px 1px 2px rgba(0, 0, 0, 0.5), inset 5px 15px 40px rgba(0, 0, 0, 0.2),
-    -2px -40px 50px -20px rgba(255, 255, 255, 0.1),
-    2px 35px 50px -10px rgba(0, 0, 0, 0.4), 0px 0px 25px 8px rgba(60, 60, 60, 1);
-}
-
 @-webkit-keyframes backAnim {
   0% {
-    background: #25292c;
+    background: #232733;
   }
   50% {
-    background: #25292c;
+    background: #232733;
   }
   100% {
     background: transparent;
@@ -154,10 +112,10 @@ h3 {
 }
 @keyframes backAnim {
   0% {
-    background: #25292c;
+    background: #232733;
   }
   50% {
-    background: #25292c;
+    background: #232733;
   }
   100% {
     background: transparent;
@@ -165,9 +123,6 @@ h3 {
 }
 @media only screen and (max-width: 600px) {
   h3 {
-    color: #25292c;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.548);
-
   }
   .background {
     .back-video {
@@ -176,8 +131,8 @@ h3 {
   }
   .content-wraper {
     animation: none;
-
-    background: url("../../../assets/stock-vector-food-seamless-background-389949865.jpg");
+    background: url("../../../assets/img/foods.jpg") center center no-repeat;
+    background-size: cover;
   }
   .wraper {
     width: 50%;
@@ -197,7 +152,7 @@ h3 {
         line-height: 20vh;
       }
     }
-    
+
   }
   .btn-holder {
     margin: 0;
@@ -205,11 +160,6 @@ h3 {
   .btn {
     width: 20vh;
     height: 20vh;
-    line-height: 20vh;
-  }
-  .before {
-    width: 22vh;
-    height: 22vh;
     line-height: 20vh;
   }
 }

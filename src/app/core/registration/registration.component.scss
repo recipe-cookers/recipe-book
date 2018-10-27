@@ -109,9 +109,11 @@ button:hover{
 @media (max-width: 600px){
   .bg{
     width: 100vw;
+    height: calc(100vh - 104px);
   }
   #container {
     left: 0;
+    top: -104px;
   }
 }
 
