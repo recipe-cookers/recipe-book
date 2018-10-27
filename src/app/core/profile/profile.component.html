@@ -1,16 +1,20 @@
 <div class="profile">
   <h2>You are logged in as {{user}}</h2>
-  <h4>Change your name and email:</h4>
-    <form class="changeform" #changeEmailForm="ngForm" (ngSubmit)="subEmail($event, changeEmailForm)">
+  <h4>Change your name</h4>
+    <form class="changeform" #changeNameForm="ngForm" (ngSubmit)="subName($event, changeNameForm)">
       <p>
         <input type="text" name="name" placeholder="New name" [(ngModel)]="model.name">
       </p>
-      <p>
-      <input type="email" name="email" placeholder="New email" [(ngModel)]="model.email">
-      </p>
       <button type="submit">Change</button>
     </form>
-  {{this.errorEmail}}
+  <h4>Change your email</h4>
+  <form class="changeform" #changeEmailForm="ngForm" (ngSubmit)="subEmail($event, changeEmailForm)">
+    <p>
+      <input type="email" name="email" placeholder="New email" [(ngModel)]="model.email">
+    </p>
+    <button type="submit">Change</button>
+  </form>
+  <div class="error">{{this.errorEmail}}</div>
   <h4>Change your password:</h4>
   <form class="changeform" #changePassForm="ngForm" (ngSubmit)="subPass($event, changePassForm)">
     <p>

@@ -17,11 +17,19 @@ export class ProfileComponent implements OnInit {
   public errorPass: string;
   public subEmail(e, changeEmailForm) {
     console.log(changeEmailForm.value);
-    this.prof.EmailNameChange({...changeEmailForm.value}).subscribe(
+    this.prof.EmailChange({...changeEmailForm.value}).subscribe(
       res => { console.log(res);
         this.auth.updateUserEmail(res.email, res.name); },
-      err => { console.log(err); this.errorEmail = JSON.stringify(err.error.errors.email);
+      err => { console.log(err); const x = JSON.stringify(err.error.errors.email); console.log(x); this.errorEmail = x.slice(2, -2);
       console.log(this.errorEmail); });
+  }
+  public subName(e, changeNameForm) {
+    console.log(changeNameForm.value);
+    this.prof.NameChange({...changeNameForm.value}).subscribe(
+      res => { console.log(res);
+        this.auth.updateUserEmail(res.email, res.name); },
+      err => { console.log(err); const x = JSON.stringify(err.error.errors.email); console.log(x); this.errorEmail = x.slice(1, -1);
+        console.log(this.errorEmail); });
   }
   public subPass(e, changePassForm) {
     console.log(changePassForm.value);
