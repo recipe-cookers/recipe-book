@@ -93,18 +93,23 @@ input:focus{
   color: #333;  }
 
 /* Link */
-button{
+button {
   color: #3c373c;
   outline: none;
   padding: 4px 8px;
-  background: rgba(249, 152, 25, 0.76);
+  background: rgba(0, 128, 0, 0.57);
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  &:disabled{
+    background: rgba(249, 152, 25, 0.76);
+    &:hover{
+      cursor: default;
+      opacity: 1;
+    }
+  }
 }
-
-button:hover{
-  opacity: 0.7;
-  cursor: pointer;
-}
-
 @media (max-width: 600px){
   .bg{
     width: 100vw;

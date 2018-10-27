@@ -39,7 +39,7 @@
       <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
       <div class="error">{{this.errorPass}}</div>
       <a>Forgot password?</a>
-      <button>Log in</button>
+      <button [disabled]="!loginForm.valid">Log in</button>
       <a routerLink="/registration">Don't have an account? Register</a>
       <!--<button type="button" class="btn btn-primary" (click)="testButton()">Test</button>-->
     </form>

@@ -1,12 +1,30 @@
 <div class="bg">
   <div id="container">
     <h1>Register</h1>
-    <form #registerForm="ngForm" (ngSubmit)="onSubmit($event, registerForm)">
-      <input type="text" name="name" placeholder="Name" minlength="4" [(ngModel)]="model.name" required>
-      <input type="email" name="email" placeholder="E-mail" minlength="4" [(ngModel)]="model.email" required>
-      <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit($event, registerForm)" >
+      <input type="text" name="name" placeholder="Name" minlength="4" [(ngModel)]="model.name" required #name="ngModel">
+      <div [hidden]="name.valid"
+           class="error">
+        <div *ngIf="name.errors && (name.errors || {}).minlength">
+          Name is too short.
+        </div>
+      </div>
+      <input type="email" name="email" placeholder="E-mail" minlength="6" [(ngModel)]="model.email" required #email="ngModel">
+        <div [hidden]="email.valid"
+             class="error">
+          <div *ngIf="email.errors && (email.errors || {}).minlength">
+            E-mail is too short.
+          </div>
+        </div>
+      <input type="password" name="password" placeholder="Password" minlength="6" [(ngModel)]="model.password" required #pass="ngModel">
+      <div [hidden]="pass.valid"
+           class="error">
+        <div *ngIf="pass.errors && (pass.errors || {}).minlength">
+          Password is too short.
+        </div>
+      </div>
       <input type="password" name="password_confirmation" placeholder="Confirm Password" [(ngModel)]="model.password_confirmation" required>
-      <button>Register</button>
+      <button [disabled]="!registerForm.valid">Register</button>
       <a routerLink="/login">Back to login</a>
       <div class="error">{{this.error}}</div>
     </form>
