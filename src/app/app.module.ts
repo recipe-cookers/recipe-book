@@ -7,20 +7,21 @@ import { SharedModule } from './shared/shared.module';
 import { StartModule } from './start/start.module';
 import { IngridientsModule } from './ingridients/ingridients.module';
 import { RecipesModule } from './recipes/recipes.module';
-import { DetailsModule } from './details/details.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngridientsService } from './shared/services/ingridients.service';
 import { HttpIngridient } from './shared/services/basicIngridient.service';
 import { NavComponent } from './nav/nav.component';
 import { ButtonComponent } from './button/button.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    ButtonComponent
+    ButtonComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,6 @@ import { ButtonComponent } from './button/button.component';
     StartModule,
     IngridientsModule,
     RecipesModule,
-    DetailsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

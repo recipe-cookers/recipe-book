@@ -5,7 +5,6 @@ import { StartComponent } from './start/start.component';
 
 const routes: Routes = [
   { path: '', component: StartComponent },
-  
 ];
 
 export const StartRouterModule: ModuleWithProviders = RouterModule.forChild(routes);
