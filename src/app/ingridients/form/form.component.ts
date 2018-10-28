@@ -10,7 +10,7 @@ import {IngridientsListComponent} from '../list/list.component';
   selector: 'ingridients-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  providers: [IngridientsService, IngridientsListComponent]
+  providers: [IngridientsService]
 })
 export class IngridientsFormComponent implements OnInit {
 
@@ -54,11 +54,11 @@ export class IngridientsFormComponent implements OnInit {
 }
 
   onSubmit() {
-    this.id = this.basicIngridient.find(x => x.name === this.title )
-    this.ingridientsService.createIngridient(this.id.id, this.title, this.titleAmount, this.titleMeasure)
-      .subscribe(
-      res => console.log(res), err => console.log(err)
-    );
+    this.id = this.basicIngridient.find(x => x.name === this.title );
+    this.ingridientsService.createIngridient(this.id.id, this.title, this.titleAmount, this.titleMeasure);
+    //   .subscribe(
+    //   res => console.log(res), err => console.log(err)
+    // );
     this.rangeForm.reset({ingridient: ''});
   }
 
