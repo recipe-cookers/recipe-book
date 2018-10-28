@@ -27,9 +27,10 @@ export class IngridientsService {
       const ingridient = new IngridientRes(id, title, titleAmount + ' ' + titleMeasure);
       this.ingridients.push(ingridient);
       console.log(this.ingridients);
-        // return this.http.post<any>
-        // ('http://refrigerator-alevel.tk/api/refrigerator/ingredients',
-        //   {'ingredient_id': id, 'amount': titleAmount + ' ' + titleMeasure}, {headers: this.auth.AuthHeaders()});
+        return this.http.post<any>
+        ('http://refrigerator-alevel.tk/api/refrigerator/ingredients',
+          {'ingredient_id': id, 'amount': titleAmount + ' ' + titleMeasure}, {headers: this.auth.AuthHeaders()})
+          .subscribe(res => console.log(res) );
     }
 
     deleteIngridient(ingridient: IngridientRes) {
@@ -38,8 +39,9 @@ export class IngridientsService {
         this.ingridients.splice(index, 1);
       }
       console.log(this.ingridients);
-      // return this.http.delete<any>
-      //   (`http://refrigerator-alevel.tk/api/refrigerator/ingredients/${ingridient.id}`, {headers: this.auth.AuthHeaders()});
+      return this.http.delete<any>
+        (`http://refrigerator-alevel.tk/api/refrigerator/ingredients/${ingridient.id}`, {headers: this.auth.AuthHeaders()})
+        .subscribe(res => console.log(res));
     }
 
 }

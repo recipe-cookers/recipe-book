@@ -1,7 +1,1 @@
-export const Ingridients = [
- {
-     id: 0,
-     name: 'Свинина',
-     amount: '500 ss',
- }
-];
+export const Ingridients = localStorage.getItem('fridge') ? JSON.parse(localStorage.getItem('fridge')) : [];

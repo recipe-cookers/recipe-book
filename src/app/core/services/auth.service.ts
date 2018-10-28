@@ -34,6 +34,7 @@ export class AuthService {
     return JSON.parse(localStorage.getItem('currentUser'));
   }
   public logOut(): void {
+    localStorage.removeItem('fridge');
     return localStorage.removeItem('currentUser');
   }
   public loginUser(form) {

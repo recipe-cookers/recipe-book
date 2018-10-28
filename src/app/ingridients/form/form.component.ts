@@ -50,12 +50,13 @@ export class IngridientsFormComponent implements OnInit {
 }
  ngOnInit() {
   this.httpService.getData().subscribe(data => this.basicIngridient = data['ingredients']);
-
 }
 
   onSubmit() {
     this.id = this.basicIngridient.find(x => x.name === this.title );
     this.ingridientsService.createIngridient(this.id.id, this.title, this.titleAmount, this.titleMeasure);
+    this.ingridientsService.getIngridientsFromServer().subscribe(res => {localStorage.setItem('fridge', JSON.stringify(res.ingredients));
+    });
     //   .subscribe(
     //   res => console.log(res), err => console.log(err)
     // );

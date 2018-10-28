@@ -22,8 +22,6 @@ export class IngridientsListComponent implements OnInit {
 
  ngOnInit() {
    this.ingridients = this.ingridientsService.getIngridients();
-   console.log('hey!');
-   console.log(this.ingridients);
 }
 
 
