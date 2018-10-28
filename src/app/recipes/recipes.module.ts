@@ -5,6 +5,7 @@ import { RecipeItemComponent } from './item/item.component';
 import { RecipiesRoutingModule} from './recipies-routing.module';
 import {FormsModule} from '@angular/forms';
 import {SearchPipe} from '../shared/pipes/search.pipe';
+import {ReccomendedComponent} from './reccomended/reccomended.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import {SearchPipe} from '../shared/pipes/search.pipe';
     RecipiesRoutingModule,
     FormsModule
   ],
-  declarations: [RecipeListComponent, RecipeItemComponent, SearchPipe],
-  exports: [RecipeListComponent, RecipeItemComponent]
+  declarations: [RecipeListComponent, RecipeItemComponent, ReccomendedComponent, SearchPipe],
+  exports: [RecipeListComponent, RecipeItemComponent, ReccomendedComponent]
 })
 export class RecipesModule { }

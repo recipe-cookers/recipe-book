@@ -17,7 +17,7 @@ export class RecipeListComponent implements OnInit {
     this.buttonPressed.emit(this.recipies.filter(x => x.id === id));
   }
   ngOnInit() {
-    console.log(recipies);
+    // console.log(recipies);
   }
 
 }

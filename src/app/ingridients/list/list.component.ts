@@ -15,11 +15,10 @@ export class IngridientsListComponent implements OnInit {
     this.ingridients = [];
 
  }
- // getData() {
- //   this.ingridientsService.getIngridientsFromServer().subscribe(res => {this.ingridients$ = res.ingredients; console.log(res.ingredients) });
- //   console.log(this.ingridients$);
- // }
-
+onSubmit() {
+   this.ingridientsService.getRecipes()
+     .subscribe(res => console.log(res), err => console.log(err));
+}
  ngOnInit() {
    this.ingridients = this.ingridientsService.getIngridients();
 }
@@ -27,7 +26,6 @@ export class IngridientsListComponent implements OnInit {
 
   delete(ingridient: IngridientRes) {
     this.ingridientsService.deleteIngridient(ingridient);
-      // .subscribe(res => console.log(res));
   }
 
 

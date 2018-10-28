@@ -30,7 +30,6 @@ import { AboutComponent } from './about/about.component';
     StartModule,
     IngridientsModule,
     RecipesModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

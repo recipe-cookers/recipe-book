@@ -107,3 +107,32 @@ img{
     }
   }
 }
+button{
+  padding: 15px;
+  margin: 10px 10px 0 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background-color: #232733;
+  color: whitesmoke;
+  border: transparent 1px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 40px;
+  &:hover{
+    background-color: #575157;
+    cursor: pointer;
+    &:active{
+      color: rgba(249, 152, 25,1);
+      border: rgba(249, 152, 25,1) 1px solid;
+    }
+  }
+  &:disabled{
+    background-color: transparent;
+    color: #232733;
+    border: #232733 1px solid;
+    &:hover{
+      opacity: 1;
+      cursor: default;
+    }
+  }
+}

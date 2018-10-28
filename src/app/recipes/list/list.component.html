@@ -4,20 +4,17 @@
     <p class="search_title">
     </p>
     <input [(ngModel)]="searchText" class="search_input" type="text" placeholder="Search" >
-  </div>
+    <button [routerLink]="['/recipies']" disabled>All recipes</button>
+    <button [routerLink]="['/recommended']" >Recommended recipes</button>  </div>
   <ul>
     <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies| search: searchText">
       <div class="itemRecipe">
-      <!-- <div class="title" >{{item.name}}</div> -->
-
         <img src={{item.image}}>
           <div class="bg">
-
           </div>
           <div class="name">
             <div class="title" >{{item.name}}</div>
           </div>
-        <!-- <div class="description">{{item.description ? item.description : item.recipeInstructions.slice(0,2)}}</div> -->
       </div>
     </li>
   </ul>
