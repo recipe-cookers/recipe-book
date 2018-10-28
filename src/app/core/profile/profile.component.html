@@ -1,5 +1,5 @@
 <div class="profile">
-  <h2>You are logged in as {{user}}</h2>
+  <h2>You are logged in as {{user || 'Anonymous'}}</h2>
   <h4>Change your name</h4>
     <form class="changeform" #changeNameForm="ngForm" (ngSubmit)="subName($event, changeNameForm)">
       <p>
