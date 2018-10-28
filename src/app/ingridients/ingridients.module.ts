@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IngridientsListComponent } from './list/list.component';
 import { IngridientsItemComponent } from './item/item.component';
 import { IngridientsFormComponent } from './form/form.component';
-import { IngridientsApplyComponent } from './apply/apply.component';
 import { IngridientsComponent } from './ingridients.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngridientRouterModule } from './ingridients-routing.module';
@@ -16,7 +15,7 @@ import { IngridientRouterModule } from './ingridients-routing.module';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [IngridientsListComponent, IngridientsItemComponent, IngridientsFormComponent, IngridientsApplyComponent, IngridientsComponent, IngridientsComponent],
-  exports: [IngridientsListComponent, IngridientsItemComponent, IngridientsFormComponent, IngridientsApplyComponent, IngridientsComponent]
+  declarations: [IngridientsListComponent, IngridientsItemComponent, IngridientsFormComponent, IngridientsComponent, IngridientsComponent],
+  exports: [IngridientsListComponent, IngridientsItemComponent, IngridientsFormComponent, IngridientsComponent]
 })
 export class IngridientsModule { }

@@ -53,9 +53,11 @@ export class IngridientsFormComponent implements OnInit {
 }
 
   onSubmit() {
-    this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleMeasure);
-    // this.id = this.basicIngridient.find(x => x.name === this.title )
-    // console.log(this.id);
+    this.id = this.basicIngridient.find(x => x.name === this.title )
+    this.ingridientsService.createIngridient(this.id.id, this.title, this.titleAmount, this.titleMeasure)
+      .subscribe(
+      res => console.log(res), err => console.log(err)
+    );
     this.rangeForm.reset({ingridient: ''});
   }
 

@@ -1,8 +1,7 @@
-export class Ingridient {
-
-    constructor(
-      public ingridient: string,
-      public amount: string,
-      public measure: string
-    ) {}
+export class IngridientRes {
+  constructor(
+    public id: number,
+    public name: string,
+    public amount: string,
+  ) {}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { Ingridient} from '../../shared/models/product.model';
+import {IngridientRes} from '../../shared/models/product.model';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Ingridient} from '../../shared/models/product.model';
 })
 export class IngridientsItemComponent implements OnInit {
 
-@Input() product: Ingridient;
+@Input() product: IngridientRes;
 
 @Output() delete = new EventEmitter();
 
@@ -20,6 +20,7 @@ onDelete() {
   constructor() { }
 
   ngOnInit() {
+    console.log('hey!');
   }
 
 }

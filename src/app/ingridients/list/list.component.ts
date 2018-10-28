@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { IngridientsService } from '../../shared/services/ingridients.service';
-import { Ingridient } from '../../shared/models/product.model';
 import { Ingridients } from '../../shared/products.data';
+import {IngridientRes} from '../../shared/models/product.model';
 
 @Component({
   selector: 'ingridients-list',
@@ -10,18 +10,18 @@ import { Ingridients } from '../../shared/products.data';
 
 })
 export class IngridientsListComponent implements OnInit {
- ingridients: Ingridient[];
+ ingridients: IngridientRes[];
 
  constructor(private ingridientsService: IngridientsService) {
-    this.ingridients = [];
-
+   this.ingridients = this.ingridientsService.getIngridients();
+   console.log(this.ingridients);
  }
 
  ngOnInit() {
-  this.ingridients = this.ingridientsService.getIngridients();
+   console.log('hey!');
 }
 
-  delete(ingridient: Ingridient) {
+  delete(ingridient: IngridientRes) {
     this.ingridientsService.deleteIngridient(ingridient);
   }
 
