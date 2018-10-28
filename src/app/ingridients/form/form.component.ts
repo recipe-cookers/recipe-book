@@ -3,13 +3,14 @@ import { IngridientsService } from '../../shared/services/ingridients.service';
 import { HttpIngridient } from '../../shared/services/basicIngridient.service';
 import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder} from '@angular/forms';
 import { BasicIngridient } from '../../shared/models/basicIngridient.model';
+import {IngridientsListComponent} from '../list/list.component';
 
 
 @Component({
   selector: 'ingridients-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  providers: [IngridientsService]
+  providers: [IngridientsService, IngridientsListComponent]
 })
 export class IngridientsFormComponent implements OnInit {
 

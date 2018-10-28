@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {IngridientRes} from '../../shared/models/product.model';
 
-
 @Component({
   selector: 'ingridients-item',
   templateUrl: './item.component.html',
@@ -20,7 +19,6 @@ onDelete() {
   constructor() { }
 
   ngOnInit() {
-    console.log('hey!');
   }
 
 }
