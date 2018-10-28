@@ -1,6 +1,8 @@
 export class Ingridient {
-  
-    constructor(public ingridient:string, public amount:string, public measure:string){
-  
-    }
+
+    constructor(
+      public ingridient: string,
+      public amount: string,
+      public measure: string
+    ) {}
 }

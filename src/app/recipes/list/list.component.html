@@ -1,8 +1,12 @@
 
 <div class="wrapper">
-  <app-search></app-search>
+  <div class="search_container">
+    <p class="search_title">
+    </p>
+    <input [(ngModel)]="searchText" class="search_input" type="text" placeholder="Search" >
+  </div>
   <ul>
-    <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies;">
+    <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies| search: searchText">
       <div class="itemRecipe">
       <!-- <div class="title" >{{item.name}}</div> -->
 

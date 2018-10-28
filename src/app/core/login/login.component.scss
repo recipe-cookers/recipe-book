@@ -16,6 +16,8 @@ img{
   margin: auto;
   width: 100%;
   height: auto;
+  animation: backAnim 5s linear
+
 }
 /* Login container */
 #container{
@@ -91,7 +93,28 @@ input:focus{
   color: red;  }
 :-ms-input-placeholder {
   color: #333;  }
-
+@-webkit-keyframes backAnim {
+  0% {
+    background: whitesmoke;
+  }
+  50% {
+    background: whitesmoke;
+  }
+  100% {
+    background: transparent;
+  }
+}
+@keyframes backAnim {
+  0% {
+    background: whitesmoke;
+  }
+  50% {
+    background: whitesmoke;
+  }
+  100% {
+    background: transparent;
+  }
+}
 /* Link */
 button {
   color: #3c373c;

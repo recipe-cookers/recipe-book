@@ -19,7 +19,7 @@ export class IngridientsFormComponent implements OnInit {
   title = '';
   titleAmount = '';
   titleMeasure = 'гр.';
-
+  id: any;
   basicIngridient: BasicIngridient[] = [];
 
   constructor(private ingridientsService: IngridientsService, public formBuilder: FormBuilder,
@@ -40,7 +40,7 @@ export class IngridientsFormComponent implements OnInit {
 
  specificValueInsideRange(group: AbstractControl) {
 
-  const selectedValue = this.basicIngridient.find(bas => bas.name == group.value.ingridient);
+  const selectedValue = this.basicIngridient.find(bas => bas.name === group.value.ingridient);
    if (!selectedValue) {
      return {
        outsideRange: true
@@ -54,6 +54,8 @@ export class IngridientsFormComponent implements OnInit {
 
   onSubmit() {
     this.ingridientsService.createIngridient(this.title, this.titleAmount, this.titleMeasure);
+    // this.id = this.basicIngridient.find(x => x.name === this.title )
+    // console.log(this.id);
     this.rangeForm.reset({ingridient: ''});
   }
 

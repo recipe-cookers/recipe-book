@@ -1,4 +1,4 @@
-export class BasicIngridient{
+export class BasicIngridient {
     id: number;
     name: string;
 }

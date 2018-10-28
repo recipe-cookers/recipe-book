@@ -10,6 +10,7 @@ export class RecipeListComponent implements OnInit {
 
   constructor() { }
   public recipies = recipies;
+  public searchText: string;
   @Output() buttonPressed = new EventEmitter<Object>();
   // search id from all recipes func
   clickHandler(id) {
