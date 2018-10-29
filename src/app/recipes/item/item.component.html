@@ -1,15 +1,27 @@
+<div class="wrapper">
+  <div class="bg">
 <div *ngIf="recipe$ | async as recipe">
-  <div class="title">{{recipe.name}}  <button (click)="gotoRecipeList(recipe)">Back</button>
+  <div class="title">  <a (click)="gotoRecipeList(recipe)">
+   <img src="../../../assets/img/arrow.png" alt=""> 
+  </a>{{recipe.name}}
   </div>
   <div class="flexwrap">
       <div class="photo"><img src={{recipe.image}}></div>
       <div class="description">{{recipe.recipeInstruction}}</div>
   </div>
-  <ul>
-    <li class="requiredIngridients" *ngFor="let subItem of recipe.recipeIngredient;">
-      <div class="ingridient">{{subItem.name}}</div>
-      <div class="amountOfIngridient">{{(subItem.count ? subItem.count : 'по вкусу')+' '+(subItem.measure ? subItem.measure : '')}}</div>
-    </li>
-  </ul>
-
+  <div class="ingr">
+    <ul>
+      <hr>
+        <h2>Ингридиенты для приготовления блюда</h2>
+        <hr>
+      <li class="requiredIngridients" *ngFor="let subItem of recipe.recipeIngredient;">
+     
+        <div class="ingridient">{{subItem.name}}</div> 
+        <div class="amountOfIngridient">{{(subItem.count ? subItem.count : 'по вкусу')+' '+(subItem.measure ? subItem.measure : '')}}</div>
+      </li>
+    </ul>
+  </div>
+ 
+</div>
+</div>
 </div>
