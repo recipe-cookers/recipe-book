@@ -8,7 +8,7 @@ import {recipies} from '../../../mock' ;
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
   public recipies = recipies;
   public searchText: string;
   @Output() buttonPressed = new EventEmitter<Object>();

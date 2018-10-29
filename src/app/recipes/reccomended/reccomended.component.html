@@ -6,10 +6,11 @@
     <button [routerLink]="['/recipies']" >All recipes</button>
     <button [routerLink]="['/recommended']" disabled>Recommended recipes</button>
   </div>
+  <p *ngIf="this.recipies==false">Looks like there is no recommended recipes. But you can find what you want in all recipes!</p>
   <ul>
-    <li [routerLink]="['/recipies', item.id]" (click)="clickHandler(item.id)" *ngFor="let item of recipies| search: searchText">
+    <li [routerLink]="['/recommended', item.id-1]" (click)="clickHandler(item.id)" *ngFor="let item of recipies| search: searchText">
       <div class="itemRecipe">
-        <img src={{item.image}}>
+        <img src={{item.picture}}>
         <div class="bg">
         </div>
         <div class="name">

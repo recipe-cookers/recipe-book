@@ -8,7 +8,8 @@ import {ReccomendedComponent} from './reccomended/reccomended.component';
 const routes: Routes = [
   { path: 'recipies', component: RecipeListComponent, pathMatch: 'full', canActivate: [AuthGuard]},
   { path: 'recipies/:id', component: RecipeItemComponent},
-  { path: 'recommended', component: ReccomendedComponent}
+  { path: 'recommended', component: ReccomendedComponent},
+  { path: 'recommended/:id', component: RecipeItemComponent}
 ];
 
 @NgModule({

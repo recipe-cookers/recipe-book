@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {recipies} from '../../../mock';
+import {IngridientsService} from '../../shared/services/ingridients.service';
 
 @Component({
   selector: 'app-reccomended',
@@ -7,8 +7,8 @@ import {recipies} from '../../../mock';
   styleUrls: ['./reccomended.component.scss']
 })
 export class ReccomendedComponent implements OnInit {
-  constructor() { }
-  public recipies = recipies;
+  constructor(private ingr: IngridientsService) { }
+  public recipies = [];
   public searchText: string;
   @Output() buttonPressed = new EventEmitter<Object>();
   // search id from all recipes func
@@ -16,6 +16,8 @@ export class ReccomendedComponent implements OnInit {
     this.buttonPressed.emit(this.recipies.filter(x => x.id === id));
   }
   ngOnInit() {
+    this.ingr.getRecipes()
+      .subscribe(res => {this.recipies = res.data; console.log(res);}, err => console.log(err));
     // console.log(recipies);
   }
 }

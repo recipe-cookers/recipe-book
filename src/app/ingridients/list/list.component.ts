@@ -16,8 +16,7 @@ export class IngridientsListComponent implements OnInit {
 
  }
 onSubmit() {
-   this.ingridientsService.getRecipes()
-     .subscribe(res => console.log(res), err => console.log(err));
+
 }
  ngOnInit() {
    this.ingridients = this.ingridientsService.getIngridients();
