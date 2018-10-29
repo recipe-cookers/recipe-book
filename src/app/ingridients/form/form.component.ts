@@ -14,6 +14,8 @@ import {IngridientsListComponent} from '../list/list.component';
 })
 export class IngridientsFormComponent implements OnInit {
 
+  public ingridient = this.ingridientsService.getIngridients();
+  
   addForm: FormGroup;
   rangeForm: FormGroup;
 
@@ -29,15 +31,17 @@ export class IngridientsFormComponent implements OnInit {
     this.rangeForm = formBuilder.group({
       'ingridient' : new FormControl('', Validators.required),
       'list' : new FormControl('')
-    }, {
-      validator: this.specificValueInsideRange.bind(this)
+    }, 
+    {
+      validator: this.specificValueInsideRange.bind(this),
+      
     });
     this.addForm = formBuilder.group({
       'rangeForm': this.rangeForm,
 
     });
-
  }
+   
 
  specificValueInsideRange(group: AbstractControl) {
 
@@ -45,6 +49,13 @@ export class IngridientsFormComponent implements OnInit {
    if (!selectedValue) {
      return {
        outsideRange: true
+     };
+   }
+   const double = this.ingridient.find(i => i.name === group.value.ingridient);
+   
+   if (double) {
+     return {
+       repeat: true
      };
    }
 }
