@@ -36,3 +36,12 @@ span{
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
+@media only screen and (max-width: 600px) {
+    li{
+       
+        width: 100%;
+        max-width: 300px;
+        font-size: 15px;
+        
+    }
+}
