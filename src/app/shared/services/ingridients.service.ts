@@ -45,4 +45,5 @@ export class IngridientsService {
     return this.http.get<any> ('http://refrigerator-alevel.tk/api/refrigerator/recipes',
       {headers: this.auth.AuthHeaders()});
   }
+  getRe
 }
