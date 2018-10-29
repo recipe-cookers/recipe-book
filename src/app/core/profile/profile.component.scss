@@ -1,28 +1,87 @@
 .profile{
-  display: block;
-  float: right;
+
   width:100%;
   min-width: calc(100vw - 104px);
   height: 100vh;
   background: linear-gradient(to right, #ffda44 , lightblue);
 }
-h2{
-  padding: 30px 10px 30px 10px;
+.bg{
+  margin: 0 auto;
+  padding: 35px;
+   max-width: 700px;
+   min-height: 100vh;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.5);
 }
-h4{
-  text-align: left;
-  padding: 10px;
+.flex{
+  
 }
-.changeform{
-  display: block;
-  width: 50%;
+.name{
+  margin: 0 auto;
 }
-.error{
-  color: #8c0000;
+.ok1{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-input{
-  text-align: left;
+.ok1 form{
+
+  display: flex;
+  flex-direction: column;
+    button{
+      
+      width: 40%;
+      height: 30px;
+      margin: 10px auto;
+      border-radius: 15px;
+      background: #232733;
+      color: #fff;
+      border: transparent;
+    }
+     button:hover{
+      cursor: pointer;
+    }
+  & input {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px 24px;
+
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #575756;
+    background-color: transparent;
+   
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #575756;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    &::placeholder {
+      color: color(#575756 a(0.8));
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    &:hover,
+    &:focus {
+      padding: 12px 0;
+      outline: 0;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #575756;
+      border-radius: 0;
+      background-position: 100% center;
+    }
+  }
 }
+
 @media (max-width: 600px) {
   .profile{
     width: 100vw;

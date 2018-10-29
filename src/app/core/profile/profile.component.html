@@ -1,32 +1,42 @@
 <div class="profile">
+
+    <div class="bg">
+
   <h2>You are logged in as {{user || 'Anonymous'}}</h2>
-  <h4>Change your name</h4>
-    <form class="changeform" #changeNameForm="ngForm" (ngSubmit)="subName($event, changeNameForm)">
-      <p>
-        <input type="text" name="name" placeholder="New name" [(ngModel)]="model.name">
-      </p>
-      <button type="submit">Change</button>
-    </form>
-  <h4>Change your email</h4>
-  <form class="changeform" #changeEmailForm="ngForm" (ngSubmit)="subEmail($event, changeEmailForm)">
-    <p>
-      <input type="email" name="email" placeholder="New email" [(ngModel)]="model.email">
-    </p>
-    <button type="submit">Change</button>
-  </form>
-  <div class="error">{{this.errorEmail}}</div>
-  <h4>Change your password:</h4>
-  <form class="changeform" #changePassForm="ngForm" (ngSubmit)="subPass($event, changePassForm)">
-    <p>
-      <input type="password" name="old_password" placeholder="Old password" [(ngModel)]="model.old_password">
-    </p>
-    <p>
-    <input type="password" name="password" placeholder="New password" [(ngModel)]="model.password">
-    </p>
-    <p>
-    <input type="password" name="password_confirmation" placeholder="Repeat password" [(ngModel)]="model.password_confirmation">
-    </p>
-    <button type="submit">Change</button>
-  </form>
-  {{this.errorPass}}
+      <div class="flex">
+  <div class="name ok1">
+      <h4>Change your name</h4>
+      <form class="changeform" #changeNameForm="ngForm" (ngSubmit)="subName($event, changeNameForm)">
+        <p>
+          <input type="text" name="name" placeholder="New name" [(ngModel)]="model.name">
+        </p>
+        <button type="submit">CHANGE</button>
+      </form>
+  </div>
+
+  <div class="email ok1">
+      <h4>Change your email</h4>
+      <form class="changeform" #changeEmailForm="ngForm" (ngSubmit)="subEmail($event, changeEmailForm)">
+        <p>
+          <input type="email" name="email" placeholder="New email" [(ngModel)]="model.email">
+        </p>
+        <button type="submit">CHANGE</button>
+      </form>
+      <div class="error">{{this.errorEmail}}</div>
+  </div>
+
+  <div class="password ok1">
+      <h4>Change your password:</h4> 
+      <form class="changeform" #changePassForm="ngForm" (ngSubmit)="subPass($event, changePassForm)">
+          <input type="password" name="old_password" placeholder="Old password" [(ngModel)]="model.old_password">
+        <input type="password" name="password" placeholder="New password" [(ngModel)]="model.password">
+        <input type="password" name="password_confirmation" placeholder="Repeat password" [(ngModel)]="model.password_confirmation">
+        
+        <button type="submit">CHANGE</button>
+      </form>
+      <div class="error">{{this.errorPass}}</div>
+  </div>
+  
+</div>
+</div>
 </div>
