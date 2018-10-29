@@ -136,3 +136,8 @@ button{
     }
   }
 }
+@media (max-width: 600px){
+ .search_container{
+   width: calc(100vw - 40px);
+ }
+}

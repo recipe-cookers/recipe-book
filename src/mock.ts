@@ -986,7 +986,7 @@ export const recipies = [
         recipeYield: '4 порции',
         recipeCategory: 'Салаты',
         url: 'https://eda.ru/recepty/salaty/salat-iz-krasnoj-fasoli-s-tvorozhnim-sirom-krasnim-lukom-i-sezonnim-salatom-16922',
-        name: 'Салат из красной фасоли с творожным сыром, красным луком и сезонным салатом',
+        name: 'Салат из красной фасоли с творожным сыром, красным луком',
         id: 14
       },
       {

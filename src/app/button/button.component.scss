@@ -14,3 +14,9 @@ text-decoration: none;
 .text1{
     color:transparent;
 }
+@media (max-width: 420px){
+  img{
+    width: 50px;
+    height: 50px;
+  }
+}

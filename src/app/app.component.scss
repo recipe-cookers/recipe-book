@@ -20,8 +20,14 @@ button:hover {
 .flex{
     display: flex;
 }
+
 @media (max-width: 600px){
   .other{
     padding: 0 0 100px 0;
+  }
+}
+@media (max-width: 420px){
+  .other{
+    padding: 0 0 86px 0;
   }
 }

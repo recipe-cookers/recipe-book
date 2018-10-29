@@ -1,10 +1,7 @@
 .wrapper{
   background: linear-gradient(to right, #ffda44 , lightblue);
-   width:calc(100vw - 104px);
 
   height: 100%;
-
-  
  }
  .bg{
    margin: 0 auto;
@@ -40,11 +37,11 @@ ul{
 .requiredIngridients{
 
   display: flex;
-  
+
   font-size: 24px;
 }
 .ingr{
-  padding-top: 30px; 
+  padding-top: 30px;
   display: flex;
   justify-content: center;
 }
@@ -66,19 +63,16 @@ flex-grow: 2;
 img{
   border-radius: 15px;
 }
-
-@media (max-width: 600px){
- 
-  .wrapper{
-    width: 100vw;
-  }
-  .flexwrap{
-    
+h2{
+  margin-bottom: 20px;
+}
+@media (max-width: 760px) {
+  .flexwrap {
     flex-direction: column;
   }
   .photo {
     padding: 15px;
-   margin: 0 auto;
+    margin: 0 auto;
   }
 }
 

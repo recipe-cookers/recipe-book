@@ -143,5 +143,10 @@ button {
     top: -104px;
   }
 }
-
+@media (max-width: 420px){
+  .bg{
+    width: 100vw;
+    height: calc(100vh - 86px);
+  }
+}
 
