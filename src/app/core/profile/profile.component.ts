@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
     this.prof.PasswordChange({...changePassForm.value}).subscribe(
       res => { console.log(res);
         this.auth.updateUserPass(res.password); },
-      err => { console.log(err); this.errorPass = JSON.stringify(err.error.errors.password);
+      err => { console.log(err); const x = JSON.stringify(err.error.errors.password); this.errorPass = x.slice(1, -1);
         console.log(this.errorPass); });
   }
   ngOnInit() {

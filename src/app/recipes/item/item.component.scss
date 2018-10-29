@@ -1,6 +1,6 @@
 .wrapper{
   background: linear-gradient(to right, #ffda44 , lightblue);
-
+  width: calc(100vw - 121px);
   height: 100%;
  }
  .bg{
@@ -74,7 +74,19 @@ h2{
     padding: 15px;
     margin: 0 auto;
   }
- 
+
 }
+@media (max-width: 600px) {
+  .wrapper{
+    width: calc(100vw - 17px);
+  }
+}
+@media (max-width: 450px) {
+  .photo img{
+    max-width: 200px;
+  }
+  .requiredIngridients{
+    font-size: 18px;
+  }
 
-
+}

@@ -59,7 +59,7 @@ img{
 .search {
   &_container {
     padding: 20px;
-    width: calc(100vw - 124px);
+    width: calc(100vw - 121px);
   }
 
   &_title {
@@ -134,5 +134,10 @@ button{
       opacity: 1;
       cursor: default;
     }
+  }
+}
+@media (max-width: 600px){
+  .search_container{
+    width: calc(100vw - 17px);
   }
 }
