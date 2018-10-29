@@ -11,6 +11,9 @@
         <div *ngIf="rangeForm.errors?.outsideRange && title !=''" class="alert">
             Укажите ингредиент из списка
         </div>
+        <div *ngIf="rangeForm.errors?.repeat" class="alert">
+          Ингредиент уже существует
+        </div>
       </div>
     </form>
     <div class='input'><input type="text" placeholder="Количество" name = 'amount'
