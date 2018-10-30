@@ -13,7 +13,7 @@ export class IngridientsService {
 
 
   getIngridients(): IngridientRes[] {
-    console.log(this.ingridients);
+    // console.log(this.ingridients);
     return this.ingridients;
   }
 
@@ -45,5 +45,4 @@ export class IngridientsService {
     return this.http.get<any> ('http://refrigerator-alevel.tk/api/refrigerator/recipes',
       {headers: this.auth.AuthHeaders()});
   }
-  getRe
 }

@@ -141,3 +141,21 @@ button{
     width: calc(100vw - 17px);
   }
 }
+@media (max-width: 450px){
+  img{
+    // width: 440px;
+    // height: 440px;
+    width:30vh;
+    height: 30vh;
+  }
+  .bg{
+    width:30vh;
+    height: 30vh;
+    margin-top:-30.5vh;
+  }
+  .name{
+    width:30vh;
+    margin-top: -170px;
+  }
+}
+

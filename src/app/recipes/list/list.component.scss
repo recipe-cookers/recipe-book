@@ -59,7 +59,7 @@ img{
 .search {
   &_container {
     padding: 20px;
-    width: calc(100vw - 124px);
+    width: calc(100vw - 121px);
   }
 
   &_title {
@@ -138,6 +138,23 @@ button{
 }
 @media (max-width: 600px){
  .search_container{
-   width: calc(100vw - 40px);
+   width: calc(100vw - 17px);
  }
+}
+@media (max-width: 450px){
+  img{
+    // width: 440px;
+    // height: 440px;
+    width:30vh;
+    height: 30vh;
+  }
+  .bg{
+    width:30vh;
+    height: 30vh;
+    margin-top:-30.5vh;
+  }
+  .name{
+    width:30vh;
+    margin-top: -170px;
+  }
 }

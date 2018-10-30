@@ -8,7 +8,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     overflow-y: auto;
-    
+
 }
 .list-item{
     height: 400px;
@@ -76,7 +76,7 @@ h3{
 }
 @media only screen and (max-width: 600px) {
    .list{
-    width: 100vw;
+     width: calc(100vw - 17px);
    }
   .desk{
     width: 320px;
