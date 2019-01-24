@@ -26,18 +26,14 @@ export class ProfileComponent implements OnInit {
   public subName(e, changeNameForm) {
     console.log(changeNameForm.value);
     this.prof.NameChange({...changeNameForm.value}).subscribe(
-      res => { console.log(res);
-        this.auth.updateUserEmail(res.email, res.name); },
-      err => { console.log(err); const x = JSON.stringify(err.error.errors.email); console.log(x); this.errorEmail = x.slice(1, -1);
-        console.log(this.errorEmail); });
+      res => { this.auth.updateUserEmail(res.email, res.name); },
+      err => { const x = JSON.stringify(err.error.errors.email); this.errorEmail = x.slice(1, -1); });
   }
   public subPass(e, changePassForm) {
     console.log(changePassForm.value);
     this.prof.PasswordChange({...changePassForm.value}).subscribe(
-      res => { console.log(res);
-        this.auth.updateUserPass(res.password); },
-      err => { console.log(err); const x = JSON.stringify(err.error.errors.password); this.errorPass = x.slice(1, -1);
-        console.log(this.errorPass); });
+      res => { this.auth.updateUserPass(res.password); },
+      err => { const x = JSON.stringify(err.error.errors.password); this.errorPass = x.slice(1, -1); });
   }
   ngOnInit() {
   }

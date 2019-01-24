@@ -18,12 +18,12 @@ export class RegistrationComponent implements OnInit {
   onSubmit(e, registerForm) {
     this.submitted = true;
     this.auth.registerUser({...registerForm.value}).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.router.navigateByUrl('/login');
     }, err => {
       this.error1 = JSON.parse(JSON.stringify(err.error.errors));
       this.error = Object.values(this.error1);
-      console.log(err);
+      // console.log(err);
     });
   }
   ngOnInit() {

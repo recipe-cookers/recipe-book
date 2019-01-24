@@ -1,35 +1,3 @@
-<!--<div class="container">-->
-  <!--<h1 >Login Form</h1>-->
-  <!--<form #loginForm="ngForm"-->
-        <!--(ngSubmit)="onSubmit($event, loginForm)">-->
-    <!--<div class="form-group">-->
-      <!--<label for="email">Email</label>-->
-      <!--<input type="text" class="form-control" id="email"  name="email" minlength="4" [(ngModel)]="model.email" appForbiddenName="bob" #name="ngModel" required>-->
-      <!--<div [hidden]="name.valid || name.pristine"-->
-           <!--class="alert alert-danger">-->
-        <!--<div *ngIf="name.errors && (name.errors || {}).required">-->
-          <!--Email is required.-->
-        <!--</div>-->
-        <!--<div *ngIf="name.errors && (name.errors || {}).minlength">-->
-          <!--Name is too short.-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--{{name.errors | json}}-->
-    <!--</div>-->
-
-    <!--<div class="form-group">-->
-      <!--<label for="password">password</label>-->
-      <!--<input type="text" class="form-control" id="password" name="password"  [(ngModel)]="model.password" required #spy>-->
-
-    <!--</div>-->
-    <!--{{loginForm.valid}}-->
-    <!--<button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>-->
-    <!--<button type="button" class="btn btn-primary" (click)="clearForm(loginForm);  loginForm.reset()" >Reset</button>-->
-    <!--<button type="button" class="btn btn-primary" (click)="testButton()">Test</button>-->
-  <!--</form>-->
-
-  <!--{{diagnostic}}-->
-<!--</div>-->
 <div class="bg">
   <div id="container">
     <h1>Log In</h1>
@@ -38,10 +6,8 @@
       <div class="error">{{this.errorEmail}}</div>
       <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
       <div class="error">{{this.errorPass}}</div>
-      <a>Forgot password?</a>
       <button [disabled]="!loginForm.valid">Log in</button>
       <a routerLink="/registration">Don't have an account? Register</a>
-      <!--<button type="button" class="btn btn-primary" (click)="testButton()">Test</button>-->
     </form>
   </div>
 </div>

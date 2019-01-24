@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import {AuthService} from '../core/services/auth.service';
 
 @Component({
@@ -26,10 +25,7 @@ export class ButtonComponent implements OnInit {
     this.display1 = 'active';
     this.display2 = 'none';
     this.display3 = 'text1';
-
   }
-
-
   constructor(private auth: AuthService) { }
 
   ngOnInit() {

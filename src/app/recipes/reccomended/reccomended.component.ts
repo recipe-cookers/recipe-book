@@ -17,7 +17,7 @@ export class ReccomendedComponent implements OnInit {
   }
   ngOnInit() {
     this.ingr.getRecipes()
-      .subscribe(res => {this.recipies = res.data; console.log(res);}, err => console.log(err));
+      .subscribe(res => {this.recipies = res.data; }, err => console.log(err));
     // console.log(recipies);
   }
 }

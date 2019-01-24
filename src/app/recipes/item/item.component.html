@@ -13,7 +13,6 @@
     <ul>
         <h2>Ингридиенты для приготовления блюда</h2>
       <li class="requiredIngridients" *ngFor="let subItem of recipe.recipeIngredient;">
-
         <div class="ingridient">{{subItem.name}}</div>
         <div class="amountOfIngridient">{{(subItem.count ? subItem.count : 'по вкусу')+' '+(subItem.measure ? subItem.measure : '')}}</div>
       </li>

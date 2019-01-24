@@ -21,8 +21,6 @@ onSubmit() {
  ngOnInit() {
    this.ingridients = this.ingridientsService.getIngridients();
 }
-
-
   delete(ingridient: IngridientRes) {
     this.ingridientsService.deleteIngridient(ingridient);
   }

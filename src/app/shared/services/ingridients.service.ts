@@ -24,7 +24,7 @@ export class IngridientsService {
   createIngridient(id: number, title: string, titleAmount: string, titleMeasure: string) {
     const ingridient = new IngridientRes(id, title, titleAmount + ' ' + titleMeasure);
     this.ingridients.push(ingridient);
-    console.log(this.ingridients);
+    // console.log(this.ingridients);
       return this.http.post<any>
       ('http://refrigerator-alevel.tk/api/refrigerator/ingredients',
         {'ingredient_id': id, 'amount': titleAmount + ' ' + titleMeasure}, {headers: this.auth.AuthHeaders()})
